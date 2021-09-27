@@ -21,10 +21,34 @@ window.addEventListener('beforeinstallprompt', (event) => {
     return false;
 });
 
-setTimeout(function(){
-    console.log("set timeout");
-    if(deferredPrompt){
+const buttons = document.querySelectorAll('.btn-primary');
+
+/*
+(1) vecchio modo
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', openInstallModal);
+}
+*/
+
+/* nuovo modo equivalente a (1) */
+buttons.forEach(el => el.addEventListener('click', event => openInstallModal(event)));
+
+function openInstallModal(event) {
+    event.preventDefault();
+
+    if (deferredPrompt) {
         deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+            console.log(choiceResult.outcome);
+            if (choiceResult.outcome === 'dismissed') {
+                console.log('User canceled installation');
+            } else {
+                console.log('User added to home screen');
+            }
+            window.location.href = event.target.getAttribute('href');
+        });
         deferredPrompt = null;
+    } else {
+        window.location.href = event.target.getAttribute('href');
     }
-}, 2000) ;
+}
