@@ -1,10 +1,12 @@
+const CACHE_STATIC_NAME = 'static-v';
+const CACHE_DYNAMIC_NAME = 'dynamic-v';
 const CACHE_STATIC_VERSION = '5';
 const CACHE_DYNAMIC_VERSION = '6';
 
 self.addEventListener('install', function (event) {
     console.log("installing service worker", event);
     event.waitUntil(
-        caches.open('static-v' + CACHE_STATIC_VERSION)
+        caches.open(CACHE_STATIC_NAME + CACHE_STATIC_VERSION)
             .then(function (cache) {
                 console.log("[Service Worker] Pre caching");
                 /*cache.add('/');
@@ -14,6 +16,7 @@ self.addEventListener('install', function (event) {
                     '/',
                     '/favicon.ico',
                     '/index.php',
+                    '/offline.php',
                     '/js/app.js',
                     'https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js',
                     'https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css',
@@ -29,7 +32,7 @@ self.addEventListener('activate', function (event) {
         caches.keys()
             .then(function (keylist) {
                     return Promise.all(keylist.map(function (key) {
-                        if (key !== 'static-v' + CACHE_STATIC_VERSION && key !== 'dynamic-v' + CACHE_DYNAMIC_VERSION) {
+                        if (key !== CACHE_STATIC_NAME + CACHE_STATIC_VERSION && key !== CACHE_DYNAMIC_NAME + CACHE_DYNAMIC_VERSION) {
                             console.log("[Service Worker] Removing old cache", key);
                             return caches.delete(key);
                         }
@@ -51,11 +54,17 @@ self.addEventListener('fetch', function (event) {
                 } else {
                     return fetch(event.request)
                         .then(function (res) {
-                            return caches.open('dynamic-v' + CACHE_DYNAMIC_VERSION)
+                            return caches.open(CACHE_DYNAMIC_NAME + CACHE_DYNAMIC_VERSION)
                                 .then(function (cache) {
                                     cache.put(event.request.url, res.clone());
                                     return res;
                                 })
+                        })
+                        .catch(function (err) {
+                            return caches.open(CACHE_STATIC_NAME + CACHE_STATIC_VERSION)
+                                .then(function (cache) {
+                                    return cache.match('/offline.php');
+                                });
                         });
                 }
                 // return response ? response : fetch(event.request);
