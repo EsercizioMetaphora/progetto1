@@ -1,7 +1,10 @@
+const CACHE_STATIC_VERSION = '5';
+const CACHE_DYNAMIC_VERSION = '6';
+
 self.addEventListener('install', function (event) {
     console.log("installing service worker", event);
     event.waitUntil(
-        caches.open('static-V1')
+        caches.open('static-v' + CACHE_STATIC_VERSION)
             .then(function (cache) {
                 console.log("[Service Worker] Pre caching");
                 /*cache.add('/');
@@ -22,6 +25,18 @@ self.addEventListener('install', function (event) {
 });
 self.addEventListener('activate', function (event) {
     console.log("activating service worker", event);
+    event.waitUntil(
+        caches.keys()
+            .then(function (keylist) {
+                    return Promise.all(keylist.map(function (key) {
+                        if (key !== 'static-v' + CACHE_STATIC_VERSION && key !== 'dynamic-v' + CACHE_DYNAMIC_VERSION) {
+                            console.log("[Service Worker] Removing old cache", key);
+                            return caches.delete(key);
+                        }
+                    }));
+                }
+            )
+    );
     return self.clients.claim();
 });
 self.addEventListener('fetch', function (event) {
@@ -35,12 +50,12 @@ self.addEventListener('fetch', function (event) {
                     return response;
                 } else {
                     return fetch(event.request)
-                        .then(function(res){
-                           return caches.open('dynamic')
-                               .then(function(cache){
-                                   cache.put(event.request.url, res.clone());
-                                   return res;
-                               })
+                        .then(function (res) {
+                            return caches.open('dynamic-v' + CACHE_DYNAMIC_VERSION)
+                                .then(function (cache) {
+                                    cache.put(event.request.url, res.clone());
+                                    return res;
+                                })
                         });
                 }
                 // return response ? response : fetch(event.request);

@@ -2,7 +2,6 @@
 <html lang="en">
 <?php require 'partials/head.php' ?>
   <body>
-  aaaa
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary flex-wrap">
             <div class="container">
