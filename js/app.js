@@ -4,14 +4,14 @@ if (!window.Promise) {
     window.Promise = Promise;
 }
 
-if('serviceWorker' in navigator){
+if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
-    .then(function(reg){
-        console.log("service worker registered: "+reg.scope);
-    })
-    .catch(function(error){
-        console.log(error);
-    });
+        .then(function (reg) {
+            console.log("service worker registered: " + reg.scope);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 }
 
 window.addEventListener('beforeinstallprompt', (event) => {
@@ -52,3 +52,21 @@ function openInstallModal(event) {
         window.location.href = event.target.getAttribute('href');
     }
 }
+
+
+let buttonCancel = document.getElementById('cancel-btn');
+let loginForm = document.getElementById('login-form-container');
+let customerButton = document.getElementById('customer-btn');
+
+customerButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    console.log("customer click 2");
+    //loginForm.classList.remove('d-none');
+    loginForm.classList.add('login-form-show');
+});
+
+buttonCancel.addEventListener('click', function (event) {
+    event.preventDefault();
+    //loginForm.classLiost.add('d-none');
+    loginForm.classList.remove('login-form-show');
+});

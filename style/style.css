@@ -1,0 +1,13 @@
+#login-form-container{
+    position: fixed;
+    max-width: inherit;
+    width: 100vw;
+    height:100vh;
+    z-index:99999;
+    background-color: white;
+    transform: translateY(200vw);
+    transition: transform 0.5s, height 0.5s;
+}
+#login-form-container.login-form-show{
+    transform: translateY(0);
+}

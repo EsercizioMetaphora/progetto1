@@ -17,7 +17,7 @@
                     Alias
                 </a>
 
-                <a href="#" class="px-1 h4 text-white d-none d-lg-inline-block"><i class="bi bi-person-fill"></i></a>
+                <a href="#" id="customer-btn" class="px-1 h4 text-white"><i class="bi bi-person-fill"></i></a>
                 <a href="#" class="d-inline-block px-1 h4 text-white"><i class="bi bi-basket-fill"></i></a>
                 <a href="#" class="px-1 h4 text-white d-none d-lg-inline-block"><i class="bi bi-search"></i></a>
                 <div class="w-100 collapse navbar-collapse" id="navbarSupportedContent">
@@ -57,7 +57,28 @@
                 
         </nav>
     </header>
-  
+    <div class="container" id="login-form-container" >
+        <div class="row">
+            <form>
+                <h2>login</h2>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-dark">Submit</button>
+                <button id="cancel-btn" class="btn btn-secondary">Cancel</button>
+            </form>
+        </div>
+    </div>
     <main>
         <section class="mt-4">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
