@@ -1,10 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-      
-<link rel="manifest" href="/manifest.json">
-
-
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -237,7 +233,6 @@
             <!-- ShareThis BEGIN --><div class="mt-5 sharethis-inline-share-buttons"></div><!-- ShareThis END -->
         </div>
     </footer>
-    <script src="/js/app.js"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
