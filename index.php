@@ -1,3 +1,6 @@
+<?php require '_load_data.php'?>
+
+
 <!doctype html>
 <html lang="en">
 

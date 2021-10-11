@@ -40,16 +40,11 @@
 
       <div class="w-100 collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto" id="navbarList">
-          <?php
-            $menu = [
-              ["titolo" => "Home", "url" => "index.php"],
-              ["titolo" => "List", "url" => "list.php"],
-              ["titolo" => "Details", "url" => "details.php"]
-            ];
+            <?php
             foreach ($menu as $voce_menu) {
               echo '<li class="nav-item h3"><a class="nav-link" href="' . $voce_menu['url'] . '">' . $voce_menu['titolo'] . '</a></li>';
             }
-          ?>
+            ?>
           <li class="nav-item d-list-item d-lg-none">
             <a href="/listaRicerca.php" class="px-1 h4 text-white"><i class="bi bi-search"></i></a>
             <a href="#" class="px-1 h4 text-white"><i class="bi bi-person-fill"></i></a>
@@ -63,6 +58,7 @@
     </div>
 
   </nav>
+
   <script type="text/javascript">
       function animateSearchForm() {
           let searchForm = document.getElementById('formRicerca');
