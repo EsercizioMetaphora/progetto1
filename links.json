@@ -1,0 +1,7 @@
+{
+    "link": [
+        {"url": "index.php", "name": "Home"},
+        {"url": "list.php", "name": "Elenco Prodotti"},
+        {"url": "details.php", "name": "Dettagli"}
+    ]
+}
