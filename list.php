@@ -67,25 +67,27 @@
                     </div>
                     -->
             <section id="articleList" class="col-12 col-md-8 col-lg-9">
-                <div class="card mb-3 p-0 border-0">
+            <?php foreach (ARTICLELIST as $article_list) : ?>
+                <article class="<?php echo $article_list['category'] ?> card mb-3 p-0 border-0" id="<?php echo $article_list['id'] ?>">
                     <div class="row g-0">
                         <div class="col-md-3">
-                            <img src="https://picsum.photos/265/263/?random&t=5" class="img-fluid card-img-top" alt="...">
+                            <img src="<?php echo $article_list['img'] ?>" class="img-fluid card-img-top" alt="...">
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-body p-0 pt-2 px-md-2">
-                                <h5 class="card-title">Card title</h5>
-                                <div style="overflow-y: scroll;">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="col-md-8 position-relative">
+                            <div class="card-body p-0 pt-2 px-md-2 d-flex flex-column h-100">
+                                <h5 class="card-title" id="cardname"><?php echo $article_list['name'] ?></h5>
+                                <p class="card-text"><?php echo $article_list['description'] ?></p>
+                                <div class="d-flex align-self-end h-100">
+                                    <div class="justify-self-end align-self-end">
+                                        <a href="#" class="btn btn-primary me-2">Maggiori Informazioni</a>
+                                        <a href="#" class="btn btn-primary"><i class="bi bi-basket-fill"></i></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="text-end my-2">
-                                <a href="#" class="btn btn-primary me-2">Maggiori Informazioni</a>
-                                <a href="#" class="btn btn-primary"><i class="bi bi-basket-fill"></i></a>
                             </div>
                         </div>
                     </div>
-                </div>
+                </article>
+            <?php endforeach ?>
             </section>
         </div>
     </div>
@@ -113,7 +115,7 @@
             }
         }
     };
-    let articleObj = [];
+/*    let articleObj = [];
     fetch("articleList.json")
         .then(function(response) {
             console.log(response);
@@ -143,7 +145,7 @@
             }
             console.log(myParam);
 
-        });
+        }); */
     let categoryObj = [];
     fetch("categoryList.json")
         .then((response) => {
@@ -181,7 +183,7 @@
         chosenName();
     });
 
-
+/*
     let templatehtml2 = (article) => {
         let html = `
                         <article class="category${article.Category} card mb-3 p-0 border-0" id="art${article.ID}">
@@ -206,5 +208,6 @@
                                 `;
         return html
     };
+*/
 </script>
 <?php require('partials/_footer.php') ?>

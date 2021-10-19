@@ -27,13 +27,13 @@
     </section>
     <section class="mt-5 container">
         <div class="row">
-            <?php foreach (ARTICLES as $article) : ?>
+            <?php foreach (ARTICLES as $articles) : ?>
                 <article class="col-6 col-lg-3">
                     <div class="card border-0">
-                        <img src="\images\articles\<?php echo $article['img'] ?>" class="card-img-top" alt="<?php echo $article['alt_text'] ?>">
+                        <img src="/images/immagini/<?php echo $articles['img'] ?>" class="card-img-top" alt="<?php echo $articles['alt_text'] ?>">
                         <div class="card-body px-0">
-                            <h5 class="card-title"><?php echo $article['title'] ?></h5>
-                            <p class="card-text"><?php echo $article['textarticles'] ?></p>
+                            <h5 class="card-title"><?php echo $articles['title'] ?></h5>
+                            <p class="card-text"><?php echo $articles['article_text'] ?></p>
                             <div class="d-flex">
                                 <a href="/details.php" class="flex-fill btn btn-primary">Info</a>
                                 <a href="#" class="btn btn-primary ms-3"><i class="bi bi-bag-plus-fill"></i></a>
