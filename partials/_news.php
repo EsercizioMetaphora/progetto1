@@ -3,15 +3,15 @@
 <?php foreach (NEWS as $news_item) : ?>
     <?php if ($conta % 2 == 0) : ?>
         <article class="row gx-0">
-            <div class="col-12 col-lg-6"><img src="/images/immagini/<?php echo $news_item['img'] ?>" class="d-block w-100" alt="<?php echo $news_item['alt_text'] ?>"></div>
+            <div class="col-12 col-lg-6"><img src="<?php echo $news_item['immagine'] ?>" class="d-block w-100" alt="<?php echo $news_item['alt'] ?>"></div>
             <div class="col-12 col-lg-6">
                 <section class="p-3">
-                    <caption><?php echo $news_item['date'] ?></caption>
+                    <caption><?php echo $news_item['data_inserimento'] ?></caption>
                     <h4 class="mt-3">
-                        <?php echo $news_item['title'] ?>
+                        <?php echo $news_item['titolo'] ?>
                     </h4>
                     <p>
-                        <?php echo $news_item['news_text'] ?>
+                        <?php echo $news_item['testo'] ?>
                     </p>
                     <a class="btn btn-primary" href="/list.php">
                         <?php echo __('readmore') ?>
@@ -25,19 +25,19 @@
         <article class="row gx-0">
             <div class="col-12 col-lg-6">
                 <section class="p-3">
-                    <caption><?php echo $news_item['date'] ?></caption>
+                    <caption><?php echo $news_item['data_inserimento'] ?></caption>
                     <h4 class="mt-3">
-                        <?php echo $news_item['title'] ?>
+                        <?php echo $news_item['titolo'] ?>
                     </h4>
                     <p>
-                        <?php echo $news_item['news_text'] ?>
+                        <?php echo $news_item['testo'] ?>
                     </p>
                     <a class="btn btn-primary" href="/list.php">
                         <?php echo __('readmore') ?>
                     </a>
                 </section>
             </div>
-            <div class="col-12 col-lg-6"><img src="/images/immagini/<?php echo $news_item['img']?>" class="d-block w-100" alt="<?php echo $news_item['alt_text'] ?>"></div>
+            <div class="col-12 col-lg-6"><img src="<?php echo $news_item['immagine']?>" class="d-block w-100" alt="<?php echo $news_item['alt'] ?>"></div>
         </article>
 
     <?php endif ?>
