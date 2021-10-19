@@ -6,29 +6,36 @@
             <div class="col-12 col-lg-6">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner mb-2">
-                        <div class="carousel-item active">
-                            <img src="/images/immagini/IMG_4155.jpg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="/images/immagini/IMG_4155a.jpg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="/images/immagini/IMG_4155.jpg" class="d-block w-100" alt="...">
-                        </div>
+                        <?php $str_active = 'active'; ?>
+                        <?php foreach ($carousel_home as $carousel_item) : ?>
+                            <div class="carousel-item <?php echo $str_active ?>">
+                                <img src="/images/carousel/<?php echo $carousel_item['img'] ?>" class="d-block w-100" alt="<?php echo $carousel_item['alt_text'] ?>">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/images/carousel/<?php echo $carousel_item['img'] ?>" class="d-block w-100" alt="<?php echo $carousel_item['alt_text'] ?>">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/images/carousel/<?php echo $carousel_item['img'] ?>" class="d-block w-100" alt="<?php echo $carousel_item['alt_text'] ?>">
+                            </div>
+                        <?php endforeach ?>
+                        <?php $str_active = ''; ?>
                     </div>
                     <div class="d-flex flex-row">
+
                         <a data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active me-2" aria-current="true" aria-label="Slide 1">
-                            <img src="/images/immagini/IMG_4155.jpg" class="d-block w-100" alt="...">
+                            <img src="/images/carousel/<?php echo $carousel_item['img'] ?>" class="d-block w-100" alt="<?php echo $carousel_item['alt_text'] ?>">
                         </a>
                         <a data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" class="me-2">
-                            <img src="/images/immagini/IMG_4155a.jpg" class="d-block w-100" alt="...">
+                            <img src="/images/carousel/<?php echo $carousel_item['img'] ?>" class="d-block w-100" alt="<?php echo $carousel_item['alt_text'] ?>">
                         </a>
-                        <a data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"">
-                                    <img src=" /images/immagini/IMG_4155.jpg" class="d-block w-100" alt="...">
+                        <a data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">
+                            <img src="/images/carousel/<?php echo $carousel_item['img'] ?>" class="d-block w-100" alt="<?php echo $carousel_item['alt_text'] ?>">
                         </a>
+
                     </div>
                 </div>
             </div>
+
             <div class="col-12 col-lg-6">
                 <section class="p-3">
                     <caption>25 Agosto 2021</caption>
