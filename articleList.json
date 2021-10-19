@@ -4,7 +4,7 @@
             "ID": "0",
             "Name": "Nome1",
             "Description": "Descrizione1",
-            "Img": "https://picsum.photos/265/263/?random&t=1",
+            "Img": "/images/immagini/IMG_4175.jpg",
             "Price": "1",
             "Category": "0"
         },
@@ -12,7 +12,7 @@
             "ID": "1",
             "Name": "Nome2",
             "Description": "Descrizione2",
-            "Img": "https://picsum.photos/265/263/?random&t=2",
+            "Img": "/images/immagini/IMG_4175.jpg",
             "Price": "2",
             "Category": "0"
         },
@@ -20,7 +20,7 @@
             "ID": "2",
             "Name": "Nome3",
             "Description": "Descrizione3",
-            "Img": "https://picsum.photos/265/263/?random&t=3",
+            "Img": "/images/immagini/IMG_4175.jpg",
             "Price": "3",
             "Category": "1"
         },
@@ -28,7 +28,7 @@
             "ID": "3",
             "Name": "Nome4",
             "Description": "Descrizione4",
-            "Img": "https://picsum.photos/265/263/?random&t=4",
+            "Img": "/images/immagini/IMG_4175.jpg",
             "Price": "4",
             "Category": "1"
         },
@@ -36,7 +36,7 @@
             "ID": "4",
             "Name": "Nome5",
             "Description": "Descrizione5",
-            "Img": "https://picsum.photos/265/263/?random&t=5",
+            "Img": "/images/immagini/IMG_4175.jpg",
             "Price": "5",
             "Category": "2"
         },
@@ -44,7 +44,7 @@
             "ID": "5",
             "Name": "Nome6",
             "Description": "Descrizione6",
-            "Img": "https://picsum.photos/265/263/?random&t=6",
+            "Img": "/images/immagini/IMG_4175.jpg",
             "Price": "6",
             "Category": "2"
         }
