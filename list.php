@@ -71,7 +71,7 @@
                 <article class="<?php echo $article['category'] ?> card mb-3 p-0 border-0" id="<?php echo $article['id'] ?>">
                     <div class="row g-0">
                         <div class="col-md-3">
-                            <img src="<?php echo $article['img'] ?>" class="img-fluid card-img-top" alt="...">
+                            <img src="/images/immagini/<?php echo $article['img'] ?>" class="img-fluid card-img-top" alt="<?php echo $article['alt_text'] ?>">
                         </div>
                         <div class="col-md-8 position-relative">
                             <div class="card-body p-0 pt-2 px-md-2 d-flex flex-column h-100">

@@ -67,7 +67,7 @@ $articles = [
     ['immagine' => '/images/immagini/IMG_4175.jpg', 'alt' => 'Immagine4', 'titolo' => 'Titolo 4', 'testo' => 'Testo 4 eccetera'],
 ];*/
 
-$sth = $pdo->prepare("SELECT * FROM articles");
+$sth = $pdo->prepare("SELECT * FROM article");
 $sth->execute();
 
 $articles = $sth->fetchAll(\PDO::FETCH_ASSOC);
@@ -78,25 +78,29 @@ define('ARTICLES', $articles);
 
 /* ARTICLE LIST */ 
 
-$sth = $pdo->prepare("SELECT * FROM articles");
+$sth = $pdo->prepare("SELECT * FROM article");
 $sth->execute();
 
 $articles_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 define('ARTICLELIST', $articles_list);
 
-/***/
+
 if(isset($_GET['article_id'])){
     $article_id = $_GET['article_id'];
-    $sth = $pdo->prepare("SELECT * FROM articles WHERE id = $article_id");
+    $sth = $pdo->prepare("SELECT * FROM article WHERE id = $article_id");
     $sth->execute();
 
     $article_detail = $sth->fetch(\PDO::FETCH_ASSOC);
 
     define('ARTICLEDETAIL', $article_detail);
-//var_dump(ARTICLEDETAIL);
-$sth = $pdo->prepare("SELECT * FROM articles_photo WHERE articles_id = $article_id");
+
+$sth = $pdo->prepare("SELECT * FROM article_photo WHERE article_id = $article_id");
 $sth->execute();
 
 $article_photos = $sth->fetchAll(\PDO::FETCH_ASSOC);
 }
+
+
+
+
