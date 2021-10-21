@@ -42,7 +42,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto" id="navbarList">
           <?php
             foreach (WEBSITE_MENU as $voce_menu) {
-              echo '<li class="nav-item h3"><a class="nav-link" title=" '.$voce_menu['alt_text'] .' "href="' . $voce_menu['url'] .'">' . $voce_menu['titolo'] . '</a></li>';
+              echo '<li class="nav-item h3"><a class="nav-link" title=" '.$voce_menu['alt'] .' "href="' . $voce_menu['url'] .'">' . $voce_menu['titolo'] . '</a></li>';
             }
           ?>
           <li class="nav-item d-list-item d-lg-none">

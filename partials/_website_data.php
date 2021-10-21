@@ -18,7 +18,7 @@ $website_texts = [
 define('WEBSITE_TEXTS', $website_texts);
 
 
-$sth = $pdo->prepare("SELECT * FROM navigation_menu ORDER BY ordine");
+$sth = $pdo->prepare("SELECT * FROM navigation_menu ORDER BY ord");
 $sth->execute();
 
 $menu = $sth->fetchAll(\PDO::FETCH_ASSOC);
@@ -31,10 +31,11 @@ $menu = [
 ];*/
 
 define('WEBSITE_MENU', $menu);
-$sth = $pdo->prepare("SELECT * FROM carousel WHERE attivo=1 ORDER BY ordine");
-$sth->execute();
-$carousel_home = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
+$sth = $pdo->prepare("SELECT * FROM carousel WHERE active=1 ORDER BY ord");
+$sth->execute();
+
+$carousel_home = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 /*
 $carousel_home = [
@@ -65,7 +66,18 @@ $articles = [
     ['immagine' => '/images/immagini/IMG_4175.jpg', 'alt' => 'Immagine2', 'titolo' => 'Titolo 2', 'testo' => 'Testo 2 eccetera'],
     ['immagine' => '/images/immagini/IMG_4175.jpg', 'alt' => 'Immagine3', 'titolo' => 'Titolo 3', 'testo' => 'Testo 3 eccetera'],
     ['immagine' => '/images/immagini/IMG_4175.jpg', 'alt' => 'Immagine4', 'titolo' => 'Titolo 4', 'testo' => 'Testo 4 eccetera'],
-];*/
+];
+
+$sth = $pdo->prepare("SELECT * FROM articles");
+$sth->execute();
+
+$articles = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+define('ARTICLES', $articles);
+*/
+ 
+
+/* ARTICLE LIST */ 
 
 $sth = $pdo->prepare("SELECT * FROM article");
 $sth->execute();
@@ -74,18 +86,7 @@ $articles = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 define('ARTICLES', $articles);
 
- 
-
-/* ARTICLE LIST */ 
-
-$sth = $pdo->prepare("SELECT * FROM article");
-$sth->execute();
-
-$articles_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
-
-define('ARTICLELIST', $articles_list);
-
-
+/***/
 if(isset($_GET['article_id'])){
     $article_id = $_GET['article_id'];
     $sth = $pdo->prepare("SELECT * FROM article WHERE id = $article_id");
@@ -95,12 +96,21 @@ if(isset($_GET['article_id'])){
 
     define('ARTICLEDETAIL', $article_detail);
 
-$sth = $pdo->prepare("SELECT * FROM article_photo WHERE article_id = $article_id");
-$sth->execute();
+    $sth = $pdo->prepare("SELECT * FROM article_photo WHERE article_id = $article_id");
+    $sth->execute();
 
-$article_photos = $sth->fetchAll(\PDO::FETCH_ASSOC);
+    $article_photos = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+// var_dump(ARTICLEDETAIL);
 }
 
 
+/* FIST PHOTO THINGY */
 
+/* $sth = $pdo->prepare("SELECT * FROM articles_photo ORDER BY ord");
+$sth->execute();
 
+$first_photo = $sth->fetch(\PDO::FETCH_ASSOC);
+define('FIRSTPHOTO', $first_photo);
+
+$waga = var_dump(FIRSTPHOTO); */

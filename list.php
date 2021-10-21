@@ -67,11 +67,12 @@
                     </div>
                     -->
             <section id="articleList" class="col-12 col-md-8 col-lg-9">
-            <?php foreach (ARTICLELIST as $article) : ?>
+            <?php foreach (ARTICLES as $article) : ?>
+            <?php $photo = getArticleFoto($article)?>
                 <article class="<?php echo $article['category'] ?> card mb-3 p-0 border-0" id="<?php echo $article['id'] ?>">
                     <div class="row g-0">
                         <div class="col-md-3">
-                            <img src="/images/immagini/<?php echo $article['img'] ?>" class="img-fluid card-img-top" alt="<?php echo $article['alt_text'] ?>">
+                            <img src="<?php echo $photo['img'] ?>" class="img-fluid card-img-top" alt="<?php echo $photo['alt']?>">
                         </div>
                         <div class="col-md-8 position-relative">
                             <div class="card-body p-0 pt-2 px-md-2 d-flex flex-column h-100">
@@ -79,7 +80,7 @@
                                 <p class="card-text"><?php echo $article['description'] ?></p>
                                 <div class="d-flex align-self-end h-100">
                                     <div class="justify-self-end align-self-end">
-                                        <a href="#" class="btn btn-primary me-2">Maggiori Informazioni</a>
+                                        <a href="/details.php?article_id=<?php echo $article['id']?>" class="btn btn-primary me-2">Maggiori Informazioni</a>
                                         <a href="#" class="btn btn-primary"><i class="bi bi-basket-fill"></i></a>
                                     </div>
                                 </div>
