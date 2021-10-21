@@ -67,28 +67,28 @@
                     </div>
                     -->
             <section id="articleList" class="col-12 col-md-8 col-lg-9">
-            <?php foreach (ARTICLES as $article) : ?>
-            <?php $photo = getArticleFoto($article)?>
-                <article class="<?php echo $article['category'] ?> card mb-3 p-0 border-0" id="<?php echo $article['id'] ?>">
-                    <div class="row g-0">
-                        <div class="col-md-3">
-                            <img src="<?php echo $photo['img'] ?>" class="img-fluid card-img-top" alt="<?php echo $photo['alt']?>">
-                        </div>
-                        <div class="col-md-8 position-relative">
-                            <div class="card-body p-0 pt-2 px-md-2 d-flex flex-column h-100">
-                                <h5 class="card-title" id="cardname"><?php echo $article['name'] ?></h5>
-                                <p class="card-text"><?php echo $article['description'] ?></p>
-                                <div class="d-flex align-self-end h-100">
-                                    <div class="justify-self-end align-self-end">
-                                        <a href="/details.php?article_id=<?php echo $article['id']?>" class="btn btn-primary me-2">Maggiori Informazioni</a>
-                                        <a href="#" class="btn btn-primary"><i class="bi bi-basket-fill"></i></a>
+                <?php foreach (ARTICLES as $article) : ?>
+                    <?php $photo = getArticleFoto($article) ?>
+                    <article class="<?php echo $article['category'] ?> card mb-3 p-0 border-0" id="<?php echo $article['id'] ?>">
+                        <div class="row g-0">
+                            <div class="col-md-3">
+                                <img src="<?php echo $photo['img'] ?>" class="img-fluid card-img-top" alt="<?php echo $photo['alt'] ?>">
+                            </div>
+                            <div class="col-md-8 position-relative">
+                                <div class="card-body p-0 pt-2 px-md-2 d-flex flex-column h-100">
+                                    <h5 class="card-title" id="cardname"><?php echo $article['name'] ?></h5>
+                                    <p class="card-text"><?php echo $article['description'] ?></p>
+                                    <div class="d-flex align-self-end h-100">
+                                        <div class="justify-self-end align-self-end">
+                                            <a href="/details.php?article_id=<?php echo $article['id'] ?>" class="btn btn-primary me-2">Maggiori Informazioni</a>
+                                            <a href="#" class="btn btn-primary"><i class="bi bi-basket-fill"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </article>
-            <?php endforeach ?>
+                    </article>
+                <?php endforeach ?>
             </section>
         </div>
     </div>
@@ -116,37 +116,37 @@
             }
         }
     };
-/*    let articleObj = [];
-    fetch("articleList.json")
-        .then(function(response) {
-            console.log(response);
-            return response.json();
-        })
-        .then(function(result) {
-            articleObj = result;
-            let articleList = document.getElementById("articleList");
-            let nuovohtml = "";
+    /*    let articleObj = [];
+        fetch("articleList.json")
+            .then(function(response) {
+                console.log(response);
+                return response.json();
+            })
+            .then(function(result) {
+                articleObj = result;
+                let articleList = document.getElementById("articleList");
+                let nuovohtml = "";
 
-            for (article of result.articleList) {
-                console.log('nuovohtml:');
-                //                        console.log(article);
-                nuovohtml += templatehtml2(article);
-                console.log(nuovohtml);
-            }
-            articleList.innerHTML = nuovohtml;
-        })
-        .then(function() {
-            console.log('so entrato qua sus');
-            const urlParams = new URLSearchParams(window.location.search);
-            const myParam = urlParams.get('textToSearch');
-            console.log('il parametr è:');
-            console.log(myParam);
-            if (myParam !== null) {
-                chosenName(myParam);
-            }
-            console.log(myParam);
+                for (article of result.articleList) {
+                    console.log('nuovohtml:');
+                    //                        console.log(article);
+                    nuovohtml += templatehtml2(article);
+                    console.log(nuovohtml);
+                }
+                articleList.innerHTML = nuovohtml;
+            })
+            .then(function() {
+                console.log('so entrato qua sus');
+                const urlParams = new URLSearchParams(window.location.search);
+                const myParam = urlParams.get('textToSearch');
+                console.log('il parametr è:');
+                console.log(myParam);
+                if (myParam !== null) {
+                    chosenName(myParam);
+                }
+                console.log(myParam);
 
-        }); */
+            }); */
     let categoryObj = [];
     fetch("categoryList.json")
         .then((response) => {
@@ -184,31 +184,31 @@
         chosenName();
     });
 
-/*
-    let templatehtml2 = (article) => {
-        let html = `
-                        <article class="category${article.Category} card mb-3 p-0 border-0" id="art${article.ID}">
-                            <div class="row g-0">
-                                <div class="col-md-3">
-                                    <img src="${article.Img}" class="img-fluid card-img-top" alt="...">
-                                </div>
-                                <div class="col-md-8 position-relative">
-                                    <div class="card-body p-0 pt-2 px-md-2 d-flex flex-column h-100">
-                                        <h5 class="card-title" id="cardname">${article.Name}</h5>
-                                        <p class="card-text">${article.Description}</p>
-                                        <div class="d-flex align-self-end h-100">
-                                            <div class="justify-self-end align-self-end">
-                                                <a href="#" class="btn btn-primary me-2">Maggiori Informazioni</a>
-                                                <a href="#" class="btn btn-primary"><i class="bi bi-basket-fill"></i></a>
+    /*
+        let templatehtml2 = (article) => {
+            let html = `
+                            <article class="category${article.Category} card mb-3 p-0 border-0" id="art${article.ID}">
+                                <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <img src="${article.Img}" class="img-fluid card-img-top" alt="...">
+                                    </div>
+                                    <div class="col-md-8 position-relative">
+                                        <div class="card-body p-0 pt-2 px-md-2 d-flex flex-column h-100">
+                                            <h5 class="card-title" id="cardname">${article.Name}</h5>
+                                            <p class="card-text">${article.Description}</p>
+                                            <div class="d-flex align-self-end h-100">
+                                                <div class="justify-self-end align-self-end">
+                                                    <a href="#" class="btn btn-primary me-2">Maggiori Informazioni</a>
+                                                    <a href="#" class="btn btn-primary"><i class="bi bi-basket-fill"></i></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </article>
-                                `;
-        return html
-    };
-*/
+                            </article>
+                                    `;
+            return html
+        };
+    */
 </script>
 <?php require('partials/_footer.php') ?>
