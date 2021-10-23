@@ -24,7 +24,7 @@ if (isset($_POST['id'])) {
     <div class="d-flex justify-content-center m-2">
         <h2>Article editor</h2>
     </div>
-    <form method="POST">
+    <form action="" method="POST">
         <div class="row mx-5">
             <div class="col-md-7">
                 <div class="form-group mb-2">
