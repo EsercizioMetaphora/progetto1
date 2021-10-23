@@ -24,7 +24,7 @@
                     <?php $counter = 0; ?>
                     <?php foreach($article_photos as $article_photo):?>
                         <a data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?php echo $counter?>" class="<?php echo $str_active ?> me-2" aria-current="true" aria-label="Slide 1">
-                            <img src="<?php echo $article_photo['img']?>" class="d-block w-100" alt="...">
+                            <img src="<?php echo $article_photo['img']?>" class="d-block w-100" alt="<?php echo $article_photo['alt']?>">
                         </a>
                     <?php $counter++;?>
                     <?php $str_active = ''; ?>
