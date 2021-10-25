@@ -7,3 +7,24 @@
       src="https://platform-api.sharethis.com/js/sharethis.js#property=61309f70a855ee0013f55721&product=sop"
       async="async"
     ></script>
+    
+    <script>
+    fetch("/links.json")
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (result) {
+          let linkList = document.getElementById("LinkList");
+          let listHtml = (link) => {
+            let html = `<li class="nav-item"><a class="nav-link" href="${link.url}">${link.name}</a></li>`;
+                    return html 
+          };
+          let nuovohtml = "";
+          for (waga of result.link) {
+            nuovohtml+=listHtml(waga);
+              console.log(listHtml(waga));
+          }
+          linkList.innerHTML= nuovohtml;
+        })
+
+    </script>
