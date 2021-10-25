@@ -25,7 +25,6 @@
             </article>
         <?php endforeach ?>
     </section>
-
 </main>
 
 <?php require('partials/_footer.php') ?>
