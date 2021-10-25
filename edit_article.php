@@ -46,7 +46,7 @@ if (isset($_POST['id'])) {
                 </div>
                 <div class="form-group mb-2">
                     <label class="my-2" for="category">Category</label>
-                    <input type="text" class="form-control" id="category" name="category" value="<?php echo $article_detail['category'] ?>">
+                    <input type="number" class="form-control" id="category" name="category" value="<?php echo $article_detail['category'] ?>">
                 </div>
                 <div class="form-group mb-2">
                     <label class="my-2" for="alt">Alternative Text</label>
@@ -54,7 +54,7 @@ if (isset($_POST['id'])) {
                 </div>
                 <div class="form-group mb-2">
                     <label class="my-2" for="price">Price</label>
-                    <input type="text" class="form-control" id="price" name="price" value="<?php echo $article_detail['price'] ?>">
+                    <input type="number" class="form-control" id="price" name="price" value="<?php echo $article_detail['price'] ?>">
                 </div>
                 <div class="form-group mb-2">
                     <label class="my-2" for="img">Image name and path</label>
@@ -62,7 +62,7 @@ if (isset($_POST['id'])) {
                 </div>
                 <div class="form-group mb-2">
                     <label class="my-2" for="order">View Order</label>
-                    <input type="text" class="form-control" id="order" name="order" value="<?php echo $article_detail['ord'] ?>">
+                    <input type="number" class="form-control" id="order" name="order" value="<?php echo $article_detail['ord'] ?>">
                 </div>
             </div>
             <div class="col-md-5 mb-2">
