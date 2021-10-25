@@ -17,7 +17,7 @@ if (isset($_POST['id'])) {
     $updated_price = $_POST['price'];
     $updated_img = $_POST['img'];
     $updated_order = $_POST['order'];
-    $sth = $pdo->prepare("UPDATE article SET `name` = '$updated_name', `description` = '$updated_description', `category` = '$updated_category',`alt` = '$updated_alt',`price` = '$updated_price',`img` = '$updated_img',`order` = '$updated_order', WHERE id = $article_id");
+    $sth = $pdo->prepare("UPDATE article SET `name` = '$updated_name', `description` = '$updated_description', `category` = '$updated_category',`alt` = '$updated_alt',`price` = '$updated_price',`img` = '$updated_img',`ord` = '$updated_order' WHERE id = $article_id");
     $sth->execute();
     $sth = $pdo->prepare("SELECT * FROM article WHERE id = $article_id");
     $sth->execute();

@@ -16,7 +16,7 @@ window.addEventListener("beforeinstallprompt", function(event){
     return false;
 });
 
-var btn = document.querySelectorAll(".btn-primary");
+var btn = document.querySelectorAll(".btn-secondary");
 for (var i = 0; i<btn.length; i++){
     btn[i].addEventListener("click", function(event){
         event.preventDefault();
