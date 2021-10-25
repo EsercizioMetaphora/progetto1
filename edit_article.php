@@ -11,7 +11,13 @@ if (!isset($article_detail)) {
 if (isset($_POST['id'])) {
     $article_id = $_POST['id'];
     $updated_name = $_POST['name'];
-    $sth = $pdo->prepare("UPDATE article SET `name` = '$updated_name' WHERE id = $article_id");
+    $updated_description = $_POST['description'];
+    $updated_category = $_POST['category'];
+    $updated_alt = $_POST['alt'];
+    $updated_price = $_POST['price'];
+    $updated_img = $_POST['img'];
+    $updated_order = $_POST['order'];
+    $sth = $pdo->prepare("UPDATE article SET `name` = '$updated_name', `description` = '$updated_description', `category` = '$updated_category',`alt` = '$updated_alt',`price` = '$updated_price',`img` = '$updated_img',`order` = '$updated_order', WHERE id = $article_id");
     $sth->execute();
     $sth = $pdo->prepare("SELECT * FROM article WHERE id = $article_id");
     $sth->execute();
