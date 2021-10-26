@@ -11,7 +11,26 @@ if (!isset($article_detail)) {
 if (isset($_POST['id'])) {
     $article_id = $_POST['id'];
     $updated_name = $_POST['name'];
+<<<<<<< Updated upstream
     $updated_description = $_POST['description'];
+=======
+    $sth = $pdo->prepare("UPDATE article SET `name`= '$updated_name' WHERE id = $article_id");
+    echo ($_POST['name']);
+
+    if (strlen($_POST['name']) > 0) {
+        $updated_name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    } else {
+        echo "titolo obbligatorio";
+        die();
+    }
+    $updated_name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    var_dump($updated_name);
+
+
+    $updated_img = $_POST['img'];
+    $updated_ord = $_POST['ord'];
+    $updated_price = $_POST['price'];
+>>>>>>> Stashed changes
     $updated_category = $_POST['category'];
     $updated_alt = $_POST['alt'];
     $updated_price = $_POST['price'];
@@ -31,6 +50,7 @@ if (isset($_POST['id'])) {
         <h2>Article editor</h2>
     </div>
     <form action="" method="POST">
+<<<<<<< Updated upstream
         <div class="row mx-5">
             <div class="col-md-7">
                 <div class="form-group mb-2">
@@ -100,3 +120,18 @@ if (isset($_POST['id'])) {
 </main>
 
 <?php require('partials/_footer.php') ?>
+=======
+
+        <div class="form-group p-4">
+            <input type="hidden" class="form-control" name="id" value="<?php echo $article_detail['id'] ?>">
+        </div>
+
+        <div class="form-group p-4">
+            <label class="fs-3">Titolo</label>
+            <input type="text" class="form-control" name="name" value="<?php echo $article_detail['name'] ?>">
+        </div>
+
+
+        <div class="form-group p-4">
+            <label class="fs-3">Immagine</label>
+>>>>>>> Stashed changes
