@@ -16,6 +16,7 @@
                             <div class="d-flex align-self-end h-100">
                                 <div class="justify-self-end align-self-end">
                                     <a href="/edit_article.php?article_id=<?php echo $article['id']?>" class="btn btn-primary"><i class="bi bi-pencil"></i></a>
+                                    <a href="/article_photo_list.php?article_id=<?php echo $article['id']?>" class="btn btn-primary"><i class="bi bi-picture"></i></a>
                                     <a href="#" class="btn btn-primary"><i class="bi bi-trash"></i></a>
                                 </div>
                             </div>

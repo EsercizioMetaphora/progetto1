@@ -29,3 +29,13 @@ function getArticleFoto($article)
     }
     return $array_return;
 }
+
+function getArticleGallery($article)
+{
+    global $pdo;
+    $article_id = $article["id"];
+    $sth = $pdo->prepare("SELECT * FROM article_photo WHERE article_id = $article_id ORDER BY ord");
+    $sth->execute();
+    $article_gallery = $sth->fetchAll(\PDO::FETCH_ASSOC);
+    return $article_gallery;
+}

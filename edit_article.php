@@ -11,7 +11,12 @@ if (!isset($article_detail)) {
 
 $errors = [];
 
-/* _POST check & field update */
+/* _POST check & field update 
+
+`ord` = '$updated_order',
+var_dump($_POST);
+
+*/
 if (isset($_POST['id'])) {
 
     $updated_name = $_POST['name'];
@@ -20,32 +25,43 @@ if (isset($_POST['id'])) {
     $updated_alt = $_POST['alt'];
     $updated_price = $_POST['price'];
     $updated_img = $_POST['img'];
-    $updated_order = $_POST['ord'];
-
+    $updated_order = $_POST['order'];
     $article_id = $_POST['id'];
 
-    if (strlen($_POST['name']) > 0) {
+    if (strlen($_POST['name']) > 2) {
         $updated_name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
     } else {
         $errors['name'] = 'Titolo Obbligatorio';
-        echo "titolo obbligatorio";
-        die();
     }
-    if (count($errors) == 0) {
-        $sth = $pdo->prepare("UPDATE article SET `name` = '$updated_name', `description` = '$updated_description', `category` = '$updated_category',`alt` = '$updated_alt',`price` = '$updated_price',`img` = '$updated_img',`ord` = '$updated_order' WHERE id = $article_id");
+
+    if (!is_numeric($_POST['price']))
+        $errors['price'] = 'Non è un numero';
+    if (!is_numeric($_POST['order']))
+        $errors['order'] = 'Non è un numero';
+    if (!is_numeric($_POST['category']))
+        $errors['category'] = 'Non è un numero';
+
+    if (count($errors) === 0) {
+        $sth = $pdo->prepare("UPDATE article SET `name` = '$updated_name',`ord` = '$updated_order', `description` = '$updated_description', `category` = '$updated_category',`alt` = '$updated_alt',`price` = '$updated_price',`img` = '$updated_img' WHERE id = $article_id");
         $sth->execute();
     }
+
     $sth = $pdo->prepare("SELECT * FROM article WHERE id = $article_id");
     $sth->execute();
+    $article_detail = $sth->fetch(\PDO::FETCH_ASSOC);
 } else {
-    $name = $article_detail['name'];
-    $description = $article_detail['description'];
-    $category = $article_detail['category'];
-    $alt = $article_detail['alt'];
-    $price = $article_detail['price'];
-    $img = $article_detail['img'];
-    $order = $article_detail['ord'];
+    $updated_name = $article_detail['name'];
+    $updated_description = $article_detail['description'];
+    $updated_category = $article_detail['category'];
+    $updated_alt = $article_detail['alt'];
+    $updated_price = $article_detail['price'];
+    $updated_img = $article_detail['img'];
+    $updated_order = $article_detail['ord'];
 }
+/* 
+`ord` = '$updated_order'
+var_dump($errors);
+ */
 ?>
 <main>
     <!-- waga
@@ -62,31 +78,34 @@ if (isset($_POST['id'])) {
                 </div>
                 <div class="form-group mb-2">
                     <label class="my-2" for="name">Article Title</label>
-                    <input type="text" class="form-control" id="name" name="name" value="<?php echo $article_detail['name'] ?>">
+                    <input type="text" class="form-control <?php echo isset($errors['name']) ? "border border-danger" : "" ?>" id="name" name="name" value="<?php echo $updated_name ?>">
+                    <?php if (isset($errors['name'])) : ?>
+                        <div class="text-danger"><?php echo ($errors['name']) ?></div>
+                    <?php endif ?>
                 </div>
                 <div class="form-group mb-2">
                     <label class="my-2" class="my-2" for="description">Article Text</label>
-                    <input type="text" class="form-control" id="description" name="description" value="<?php echo $article_detail['description'] ?>">
+                    <input type="text" class="form-control <?php echo isset($errors['description']) ? "border border-danger" : "" ?>" id="description" name="description" value="<?php echo $updated_description ?>">
                 </div>
                 <div class="form-group mb-2">
                     <label class="my-2" for="category">Category</label>
-                    <input type="number" class="form-control" id="category" name="category" value="<?php echo $article_detail['category'] ?>">
+                    <input type="text" class="form-control <?php echo isset($errors['category']) ? "border border-danger" : "" ?>" id="category" name="category" value="<?php echo $updated_category ?>">
                 </div>
                 <div class="form-group mb-2">
                     <label class="my-2" for="alt">Alternative Text</label>
-                    <input type="text" class="form-control" id="alt" name="alt" value="<?php echo $article_detail['alt'] ?>">
+                    <input type="text" class="form-control <?php echo isset($errors['alt']) ? "border border-danger" : "" ?>" id="alt" name="alt" value="<?php echo $updated_alt ?>">
                 </div>
                 <div class="form-group mb-2">
                     <label class="my-2" for="price">Price</label>
-                    <input type="number" class="form-control" id="price" name="price" value="<?php echo $article_detail['price'] ?>">
+                    <input type="text" class="form-control <?php echo isset($errors['price']) ? "border border-danger" : "" ?>" id="price" name="price" value="<?php echo $updated_price ?>">
                 </div>
                 <div class="form-group mb-2">
                     <label class="my-2" for="img">Image name and path</label>
-                    <input type="text" class="form-control" id="img" name="img" value="<?php echo $article_detail['img'] ?>">
+                    <input type="text" class="form-control <?php echo isset($errors['img']) ? "border border-danger" : "" ?>" id="img" name="img" value="<?php echo $updated_img ?>">
                 </div>
                 <div class="form-group mb-2">
                     <label class="my-2" for="order">View Order</label>
-                    <input type="number" class="form-control" id="order" name="order" value="<?php echo $article_detail['ord'] ?>">
+                    <input type="text" class="form-control <?php echo isset($errors['order']) ? "border border-danger" : "" ?>" id="order" name="order" value="<?php echo $updated_order ?>">
                 </div>
             </div>
             <div class="col-md-5 mb-2">
