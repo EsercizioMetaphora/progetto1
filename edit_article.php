@@ -7,9 +7,13 @@ if (!isset($article_detail)) {
     require('partials/404.php');
     die();
 }
+/* INDICIZZAZIONE ERRORI */
+
+$errors = [];
+
 /* _POST check & field update */
 if (isset($_POST['id'])) {
-    $article_id = $_POST['id'];
+
     $updated_name = $_POST['name'];
     $updated_description = $_POST['description'];
     $updated_category = $_POST['category'];
@@ -17,10 +21,30 @@ if (isset($_POST['id'])) {
     $updated_price = $_POST['price'];
     $updated_img = $_POST['img'];
     $updated_order = $_POST['order'];
-    $sth = $pdo->prepare("UPDATE article SET `name` = '$updated_name', `description` = '$updated_description', `category` = '$updated_category',`alt` = '$updated_alt',`price` = '$updated_price',`img` = '$updated_img',`ord` = '$updated_order' WHERE id = $article_id");
-    $sth->execute();
+
+    $article_id = $_POST['id'];
+
+    if (strlen($_POST['name']) > 0) {
+        $updated_name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    } else {
+        $errors['name'] = 'Titolo Obbligatorio';
+        echo "titolo obbligatorio";
+        die();
+    }
+    if (count($errors) == 0) {
+        $sth = $pdo->prepare("UPDATE article SET `name` = '$updated_name', `description` = '$updated_description', `category` = '$updated_category',`alt` = '$updated_alt',`price` = '$updated_price',`img` = '$updated_img',`ord` = '$updated_order' WHERE id = $article_id");
+        $sth->execute();
+    }
     $sth = $pdo->prepare("SELECT * FROM article WHERE id = $article_id");
     $sth->execute();
+} else {
+    $name = $article_detail['name'];
+    $description = $article_detail['description'];
+    $category = $article_detail['category'];
+    $alt = $article_detail['alt'];
+    $price = $article_detail['price'];
+    $img = $article_detail['img'];
+    $order = $article_detail['order'];
 }
 ?>
 <main>
