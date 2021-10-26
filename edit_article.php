@@ -20,7 +20,7 @@ if (isset($_POST['id'])) {
     $updated_alt = $_POST['alt'];
     $updated_price = $_POST['price'];
     $updated_img = $_POST['img'];
-    $updated_order = $_POST['order'];
+    $updated_order = $_POST['ord'];
 
     $article_id = $_POST['id'];
 
@@ -44,7 +44,7 @@ if (isset($_POST['id'])) {
     $alt = $article_detail['alt'];
     $price = $article_detail['price'];
     $img = $article_detail['img'];
-    $order = $article_detail['order'];
+    $order = $article_detail['ord'];
 }
 ?>
 <main>
