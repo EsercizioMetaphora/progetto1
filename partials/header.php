@@ -15,7 +15,7 @@
                   transform="translate(-126.021 -336.652)" fill="#fff"></path>
           </g>
         </svg>
-        Alias
+        IRENE
       </a>
 
       <div>

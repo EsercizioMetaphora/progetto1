@@ -1,7 +1,7 @@
 <section class="mt-4">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            
+
             <?php $str_active = 'active'; ?>
             <?php foreach ($carousel_home as $carousel_item) : ?>
                 <div class="carousel-item <?php echo $str_active ?>">
