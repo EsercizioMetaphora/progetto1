@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php require '_db_connection.php'?>
+<?php require '_website_data.php'?>
+<?php require '_functions.php'?>
 <html class="no-js" lang="zxx">
 
 <head>
