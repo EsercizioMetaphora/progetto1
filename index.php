@@ -1,4 +1,4 @@
-<?php require "partials/_head.php" ?>
+<?php require 'partials/_head.php' ?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
