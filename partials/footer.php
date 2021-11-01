@@ -46,9 +46,9 @@
                         </form>
                     </div>
                     <ul class="footer-socail-share">
-                        <?php foreach (SOCIALS as $social_links) {
+                        <?php foreach (SOCIALS as $social_item) {
                             echo
-                            '<li><a title=" ' . $social_links['title'] . ' "href="' . $social_links['url'] . '">' . $social_links['alt'] . '</a></li>';
+                            '<li><a title=" ' . $social_item['title'] . ' "href="' . $social_item['url'] . '">' . $social_item['alt'] . '</a></li>';
                         }
                         ?>
                     </ul>

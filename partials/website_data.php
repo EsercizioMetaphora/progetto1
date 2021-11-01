@@ -10,6 +10,62 @@ $menu = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 define('WEBSITE_MENU', $menu);
 
+/* Hero Area */
+
+$sth = $pdo->prepare("SELECT * FROM articles ORDER BY ord");
+$sth->execute();
+
+$hero_item = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+define('HEROES', $hero_item);
+
+/* Categories */
+
+$sth = $pdo->prepare("SELECT * FROM categories");
+$sth->execute();
+
+$categorie_item = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+define('CATEGORIES', $categorie_item);
+
+/* Recent Articles */
+
+$sth = $pdo->prepare("SELECT * FROM articles ORDER BY ord");
+$sth->execute();
+
+$recent_item = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+define('RECENTS', $recent_item);
+
+
+/* News */
+
+$sth = $pdo->prepare("SELECT * FROM news ORDER BY ord");
+$sth->execute();
+
+$news_item = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+define('NEWS', $news_item);
+
+
+/* Socials */
+
+$sth = $pdo->prepare("SELECT * FROM socials ORDER BY ord");
+$sth->execute();
+
+$social_item = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+define('SOCIALS', $social_item);
+
+/* Partners */
+
+$sth = $pdo->prepare("SELECT * FROM partners ORDER BY ord");
+$sth->execute();
+
+$partner_item = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+define('PARTNERS', $partner_item);
+
 
 /* Footer 1 */
 
@@ -28,43 +84,6 @@ $sth->execute();
 $footer_2 = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 define('WEBSITE_FOOTER_2', $footer_2);
-
-/* News */
-
-$sth = $pdo->prepare("SELECT * FROM news");
-$sth->execute();
-
-$news = $sth->fetchAll(\PDO::FETCH_ASSOC);
-
-define('NEWS', $news);
-
-
-/* Socials */
-
-$sth = $pdo->prepare("SELECT * FROM social_networks ORDER BY ord");
-$sth->execute();
-
-$social_links = $sth->fetchAll(\PDO::FETCH_ASSOC);
-
-define('SOCIALS', $social_links);
-
-/* Partners */
-
-$sth = $pdo->prepare("SELECT * FROM partners ORDER BY ord");
-$sth->execute();
-
-$partners = $sth->fetchAll(\PDO::FETCH_ASSOC);
-
-define('PARTNERS', $partners);
-
-/* Categories */
-
-$sth = $pdo->prepare("SELECT * FROM categories");
-$sth->execute();
-
-$categories = $sth->fetchAll(\PDO::FETCH_ASSOC);
-
-define('CATEGORIES', $categories);
 
 
 
