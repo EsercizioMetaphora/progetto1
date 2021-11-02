@@ -14,7 +14,7 @@
                      <nav class="navigation-menu">
                          <ul>
                              <?php foreach (WEBSITE_MENU as $menu_item) : ?>
-                                 <li><a href="<?php echo $menu_item['url'] ?>" alt="<?php echo $menu_item['alt'] ?>"><span></span></a><?php echo $menu_item['title'] ?></li>
+                                 <li><a href="<?php echo $menu_item['url'] ?>" alt="<?php echo $menu_item['alt'] ?>"><?php echo $menu_item['title'] ?></a></li>
                              <?php endforeach ?>
                          </ul>
                      </nav>

@@ -37,7 +37,6 @@ $recent_item = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 define('RECENTS', $recent_item);
 
-
 /* News */
 
 $sth = $pdo->prepare("SELECT * FROM news ORDER BY ord");
@@ -46,7 +45,6 @@ $sth->execute();
 $news_item = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 define('NEWS', $news_item);
-
 
 /* Socials */
 
@@ -65,7 +63,6 @@ $sth->execute();
 $partner_item = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 define('PARTNERS', $partner_item);
-
 
 /* Footer 1 */
 
