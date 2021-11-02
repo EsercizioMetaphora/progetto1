@@ -4,7 +4,7 @@
             <div class="col-lg-12">
                 <div class="recent-article-header-two border-top">
                     <div class="section-title-three" data-aos="fade-up">
-                        <h2 class="title">Ultimi Post</h2>
+                        <h2 class="title"><?php echo __('Home.Ultimi_Post') ?></h2>
                     </div>
                     <div class="search-box">
                         <div class="input-search-box" data-aos="fade-up">
@@ -27,7 +27,7 @@
                     </a>
                     <div class="recent-article-content">
                         <div class="recent-article-post-author">
-                            By <a href="#"><?php echo $autor['nome']." ".$autor['cognome']?></a>
+                        <?php echo __('Home.By') ?> <a href="#"><?php echo $autor['nome']." ".$autor['cognome']?></a>
                         </div>
                         <h3 class="title"><a href="blog-details.html"><?php echo $art_element['titolo']?></a>
                         </h3>

@@ -21,7 +21,6 @@
                     <!-- Single Most Populer Item Start -->
                     <?php foreach (HEROES as $hero_item) : ?>
                         <?php $autor = getAutor($hero_item['autor_id']) ?>
-
                         <div class="single-most-populer-item" data-aos="fade-up">
                             <a href="#!" class="most-populer-thum">
                                 <img src="assets/images/populer/01_populer.jpg" alt="" />
@@ -39,8 +38,9 @@
                                     <span><?php echo $hero_item['read_time'] ?></span>
                                 </div>
                             </div>
-                        <?php endforeach ?>
-                        </div><!-- Single Most Populer Item End -->
+                        </div>
+                    <?php endforeach ?>
+                    <!-- Single Most Populer Item End -->
                 </div>
             </div>
         </div>

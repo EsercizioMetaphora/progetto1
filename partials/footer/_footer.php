@@ -28,7 +28,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-7">
                         <div class="footer-widget footer-subscribe-area">
                             <div class="footer-widget-title">
-                                <h4 class="title">Iscriviti alla Newsletter</h4>
+                                <h4 class="title"><?php echo __('Footer.Banner.Title') ?></h4>
                             </div>
                             <form>
                                 <div class="footer-subscribe-wrap">
@@ -39,7 +39,7 @@
                                         <input type="email" placeholder="Email Address">
                                     </div>
                                     <div class="button-box">
-                                        <button class="btn-primary btn-bg-3 btn-large" type="submit">Iscriviti </button>
+                                        <button class="btn-primary btn-bg-3 btn-large" type="submit"><?php echo __('Footer.Banner.button') ?></button>
                                     </div>
                                 </div>
                             </form>

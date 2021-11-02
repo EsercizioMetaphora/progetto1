@@ -1,6 +1,6 @@
 <?php
 
-/* RECUPERO FOTO DA article_photo PER SCHIAFFARLA NEGLI ARTICOLI */
+/* RECUPERO autori PER SCHIAFFARLA NEGLI ARTICOLI */
 
 function getAutor($autor_id)
 {
@@ -12,5 +12,18 @@ function getAutor($autor_id)
         return $article_autor[0];
     } else {
         return false;
+    }
+}
+
+function __($str, $lang = 'it')
+{
+    global $pdo;
+    $sth = $pdo->prepare("SELECT * FROM `translation` WHERE `source` = '$str' AND `language` = '$lang' LIMIT 1");
+    $sth->execute();
+    $traduzione = $sth->fetch(\PDO::FETCH_ASSOC);
+    if (is_array($traduzione)) {
+        return $traduzione['target'];
+    } else {
+        return $str;
     }
 }

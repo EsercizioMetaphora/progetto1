@@ -26,13 +26,13 @@
                         <div class="col-lg-12">
                             <div class="related-newsletter-three-box">
                                 <div class="related-newsletter-three-inner-box">
-                                    <h2 class="title">Lorem ipsum dolor sit amet, consectetur adipiscing eli.</h2>
+                                    <h2 class="title"><?php echo __('Home.Banner.Big.Title') ?></h2>
                                     <div class="button-box mt-30">
-                                        <a href="#" class="btn-primary btn-medium">Call To Action</a>
+                                        <a href="<?php echo __('Home.Banner.Big.link_url') ?>" class="btn-primary btn-medium"><?php echo __('Home.Banner.Big.link_title') ?></a>
                                     </div>
                                 </div>
                                 <div class="subscribe-today-update">
-                                    <h4 class="today-update-text">Lorem Ipsum is simply dummy text themes</h4>
+                                    <h4 class="today-update-text"><?php echo __('Home.Banner.Big.text') ?></h4>
                                 </div>
                             </div>
                         </div>
