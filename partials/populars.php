@@ -26,7 +26,6 @@
                     <div class="swiper-slide">
 
                         <!-- Single Most Populer Item Start -->
-
                         <div class="single-most-populer-item" data-aos="fade-up">
                             <a href="#!" class="most-populer-thum">
                                 <img src="<?php echo $news_item['img'] ?>" alt="<?php echo $news_item['alt'] ?>" />
@@ -45,8 +44,8 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Single Most Populer Item End -->
+                        
                     </div>
                 <?php endforeach ?>
             </div>

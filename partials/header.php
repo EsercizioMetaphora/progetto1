@@ -13,15 +13,11 @@
                  <div class="main-menu-area text-center">
                      <nav class="navigation-menu">
                          <ul>
-                             <?php foreach (WEBSITE_MENU as $voce_menu) {
-                                    echo
-                                    '<li><a title=" ' . $voce_menu['title'] . ' "href="' . $voce_menu['url'] . '">' . $voce_menu['alt'] . '</a></li>';
-                                }
-
-                                ?>
+                             <?php foreach (WEBSITE_MENU as $menu_item) : ?>
+                                 <li><a href="<?php echo $menu_item['url'] ?>" alt="<?php echo $menu_item['alt'] ?>"><span></span></a><?php echo $menu_item['title'] ?></li>
+                             <?php endforeach ?>
                          </ul>
                      </nav>
-
                  </div>
 
                  <div class="header-three-right-side">
@@ -37,5 +33,6 @@
              </div>
          </div>
      </div>
+     
  </header>
  <!--======== End of header area  =========-->

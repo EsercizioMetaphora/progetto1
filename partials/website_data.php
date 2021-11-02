@@ -6,9 +6,9 @@ error_reporting(-1);
 $sth = $pdo->prepare("SELECT * FROM navigation_menu ORDER BY ord");
 $sth->execute();
 
-$menu = $sth->fetchAll(\PDO::FETCH_ASSOC);
+$menu_item = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
-define('WEBSITE_MENU', $menu);
+define('WEBSITE_MENU', $menu_item);
 
 /* Hero Area */
 

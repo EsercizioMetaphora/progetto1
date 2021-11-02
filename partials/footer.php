@@ -46,12 +46,9 @@
                         </form>
                     </div>
                     <ul class="footer-socail-share">
-                        <?php foreach (SOCIALS as $social_item) {
-                            echo
-                            '<li><a title=" ' . $social_item['title'] . ' "href="' . $social_item['url'] . '">' . $social_item['alt'] . '</a></li>';
-                        }
-                        ?>
-                    </ul>
+                        <?php foreach (SOCIALS as $social_item) : ?>
+                            <li><a href="<?php echo $social_item['url'] ?>"><i class="icofont-<?php echo $social_item['title'] ?>" alt="<?php echo $social_item['alt'] ?>"></i></a></li>
+                        <?php endforeach ?>
                 </div>
 
                 <div class="col-lg-3 offset-xl-1  col-md-6 col-sm-5">
@@ -60,11 +57,9 @@
                             <h4 class="title">Navigation Menu Footer 1</h4>
                         </div>
                         <ul class="footer-widget-menu-list">
-                            <?php foreach (WEBSITE_FOOTER_1 as $voce_footer_1) {
-                                echo
-                                '<li><a title=" ' . $voce_footer_1['title'] . ' "href="' . $voce_footer_1['url'] . '">' . $voce_footer_1['alt'] . '</a></li>';
-                            }
-                            ?>
+                            <?php foreach (WEBSITE_FOOTER_1 as $footer_1) : ?>
+                                <li><a href="<?php echo $footer_1['url'] ?>" alt="<?php echo $footer_1['alt'] ?>"><?php echo $footer_1['title'] ?></a></li>
+                            <?php endforeach ?>
                         </ul>
                     </div>
                 </div>
@@ -75,11 +70,9 @@
                             <h4 class="title">Navigation Menu Footer 2</h4>
                         </div>
                         <ul class="footer-widget-menu-list">
-                            <?php foreach (WEBSITE_FOOTER_2 as $voce_footer_2) {
-                                echo
-                                '<li><a title=" ' . $voce_footer_2['title'] . ' "href="' . $voce_footer_2['url'] . '">' . $voce_footer_2['alt'] . '</a></li>';
-                            }
-                            ?>
+                            <?php foreach (WEBSITE_FOOTER_2 as $footer_2) : ?>
+                                <li><a href="<?php echo $footer_2['url'] ?>" alt="<?php echo $footer_2['alt'] ?>"><?php echo $footer_2['title'] ?></a></li>
+                            <?php endforeach ?>
                         </ul>
                     </div>
                 </div>
