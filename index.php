@@ -118,13 +118,13 @@
                                     <div class="category-step-<?php echo $cat_steps['step']?>" data-aos="fade-up">
                                         <?php
                                             $cat_corrente = $cat_steps['step'];
-                                            $sth = $pdo->prepare("SELECT nome FROM categories WHERE step = $cat_corrente");
+                                            $sth = $pdo->prepare("SELECT * FROM categories WHERE step = $cat_corrente");
                                             $sth->execute();
                                             
                                             $categories = $sth->fetchAll(\PDO::FETCH_ASSOC);
                                         ?>
                                         <?php foreach ($categories as $categoryitem) : ?>
-                                            <a href="#" class="btn-primary-three btn-large"><?php echo $categoryitem['nome']?></a>
+                                            <a data-rel="<?php $categoryitem['id'] ?>" href="#" class="btn-primary-three btn-large categoryfilter"><?php echo $categoryitem['nome']?></a>
                                         <?php endforeach ?>
                                     </div>
                                 <?php endforeach ?>
@@ -134,6 +134,29 @@
                     </div>
                 </div>
             </div>
+
+            <script>
+                function filtrapost(id)
+                {
+                    var all_article_post = document.getElementsByClassName('all-article-post');
+                    for (const elemento of all_article_post)
+                    {
+                        if(!elemento.classList.contains("class-" + id))
+                            elemento.style.display = "none";
+                        else
+                            elemento.style.display = "";
+                    }
+                }
+
+                var categorylist = document.getElementsByClassName('categoryfilter');
+                for (const elemento of categorylist) {
+                    elemento.addEventListener('click', function(e){
+                        e.preventDefault();
+                        filtrapost(elemento.getAttribute('data-rel'));
+                    });
+                }
+                
+            </script>
 
             <!-- Recent Article Area Start -->
             <div class="recent-article-area section-space--pb_120">
@@ -158,7 +181,7 @@
                         <div class="col-lg-12">
                             <!-- Single Recent Article Item Start -->
                             <?php foreach (POST as $post) : ?>
-                                <div class="single-recent-article-item" data-aos="fade-up">
+                                <div class="single-recent-article-item all-article-post class-<?php echo $post['category_id']?>" data-aos="fade-up">
                                     <a href="#!" class="recent-article-thum">
                                         <img src="<?php echo $post['img']?>" alt="" />
                                     </a>
