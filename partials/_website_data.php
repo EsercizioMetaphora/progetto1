@@ -21,8 +21,12 @@ define('CATEGORIES', $cat_list);
 /* CATEGORY END */
 
 /* RECENT ARTICLES START */
-
-$sth = $pdo->prepare("SELECT * FROM article ");
+if (isset($_GET['q'])) {
+    $get_q = $_GET['q'];
+    $sth = $pdo->prepare("SELECT * FROM article WHERE titolo like '%$get_q%' OR `testo` like '%$get_q%' ");
+} else {
+    $sth = $pdo->prepare("SELECT * FROM article");
+}
 $sth->execute();
 
 $art_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
@@ -74,4 +78,9 @@ $partner = $sth->fetchAll(\PDO::FETCH_ASSOC);
 define('PARTNER', $partner);
 
 /* end footer nav */
-
+if (isset($_GET['slug'])) {
+    $slug = $_GET['slug'];
+    $sth = $pdo->prepare("SELECT * FROM article WHERE `slug` = '$slug' LIMIT 1");
+    $sth->execute();
+    $article_slug = $sth->fetch(\PDO::FETCH_ASSOC);
+}
