@@ -29,15 +29,15 @@
                 <div class="col-lg-3 col-md-6 col-sm-7">
                     <div class="footer-widget footer-subscribe-area">
                         <div class="footer-widget-title">
-                            <h4 class="title">Iscriviti alla Newsletter</h4>
+                            <h4 class="title"><?php echo __('Home.Unisciti.alla.Newsletter') ?></h4>
                         </div>
-                        <form>
+                        <form action="/confirmation.php" method="POST">
                             <div class="footer-subscribe-wrap">
                                 <div class="single-input">
-                                    <input type="text" placeholder="Your Name">
+                                    <input name="newsletter[name]" type="text" placeholder="Your Name">
                                 </div>
                                 <div class="single-input">
-                                    <input type="email" placeholder="Email Address">
+                                    <input name="newsletter[email]" type="email" placeholder="Email Address">
                                 </div>
                                 <div class="button-box">
                                     <button class="btn-primary btn-bg-3 btn-large" type="submit">Iscriviti </button>
@@ -49,12 +49,13 @@
                         <?php foreach (SOCIALS as $social_item) : ?>
                             <li><a href="<?php echo $social_item['url'] ?>"><i class="icofont-<?php echo $social_item['title'] ?>" alt="<?php echo $social_item['alt'] ?>"></i></a></li>
                         <?php endforeach ?>
+                    </ul>
                 </div>
 
                 <div class="col-lg-3 offset-xl-1  col-md-6 col-sm-5">
                     <div class="single-footer-menu-item mt-30">
                         <div class="footer-widget-title">
-                            <h4 class="title">Navigation Menu Footer 1</h4>
+                            <h4 class="title"><?php echo __('Home.Footer1') ?></h4>
                         </div>
                         <ul class="footer-widget-menu-list">
                             <?php foreach (WEBSITE_FOOTER_1 as $footer_1) : ?>
@@ -67,7 +68,7 @@
                 <div class="col-lg-3  col-md-6 col-sm-6">
                     <div class="single-footer-menu-item mt-30">
                         <div class="footer-widget-title">
-                            <h4 class="title">Navigation Menu Footer 2</h4>
+                            <h4 class="title"><?php echo __('Home.Footer2') ?></h4>
                         </div>
                         <ul class="footer-widget-menu-list">
                             <?php foreach (WEBSITE_FOOTER_2 as $footer_2) : ?>

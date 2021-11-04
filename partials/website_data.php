@@ -30,9 +30,20 @@ define('CATEGORIES', $categorie_item);
 
 /* Recent Articles */
 
-$sth = $pdo->prepare("SELECT * FROM articles ORDER BY ord");
+$sth = $pdo->prepare("SELECT * FROM articles ORDER BY id");
 $sth->execute();
 
+$recent_item = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+$get_q='';
+
+if (isset($_GET['q'])) {
+    $get_q=($_GET['q']);
+    $sth = $pdo->prepare("SELECT * FROM articles WHERE title like '%$get_q%' OR author like '%$get_q%' OR `description` like '%$get_q%' ORDER BY id");
+} else {
+    $sth = $pdo->prepare("SELECT * FROM articles ORDER BY id");
+}
+$sth->execute();
 $recent_item = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 define('RECENTS', $recent_item);
@@ -81,8 +92,5 @@ $sth->execute();
 $footer_2 = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 define('WEBSITE_FOOTER_2', $footer_2);
-
-
-
 
 

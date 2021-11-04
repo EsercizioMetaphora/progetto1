@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-8">
                 <div class="section-title-three" data-aos="fade-up">
-                    <h2 class="title">Notizie della settimana</h2>
+                    <h2 class="title"><?php echo __('Home.Notizie.della.Settimana') ?></h2>
                 </div>
             </div>
             <div class="col-4">

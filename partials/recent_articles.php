@@ -6,23 +6,26 @@
             <div class="col-lg-12">
                 <div class="recent-article-header-two border-top">
                     <div class="section-title-three" data-aos="fade-up">
-                        <h2 class="title">Ultimi Post</h2>
+                        <h2 class="title"><?php echo __('Home.Ultimi.Post') ?></h2>
                     </div>
                     <div class="search-box">
-                        <div class="input-search-box" data-aos="fade-up">
-                            <input class="input" type="text" placeholder="Search here">
-                            <button class="submit-button"><i class="icofont-search-1"></i></button>
-                        </div>
+                        <form action="" method="GET">
+                            <div class="input-search-box" data-aos="fade-up">
+                                <input name="q" value="<?php echo $get_q ?>" class="input" type="text" placeholder="Search here">
+                                <button class="submit-button"><i class="icofont-search-1"></i></button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
+
                 <!-- Single Recent Article Item Start -->
+
                 <?php foreach (RECENTS as $recent_item) : ?>
-                    <div class="single-recent-article-item" data-aos="fade-up">
+                    <div class="single-recent-article-item all-article-post class-<?php echo $recent_item['category_id'] ?>" data-aos="fade-up">
                         <a href="#!" class="recent-article-thum">
                             <img src="<?php echo $recent_item['img'] ?>" alt="<?php echo $recent_item['alt'] ?>" />
                         </a>
@@ -42,11 +45,13 @@
                         </div>
                     </div>
                 <?php endforeach ?>
+
                 <!-- Single recent Article Item End -->
 
                 <!-- Single Recent Article Item Start -->
+
                 <?php foreach (RECENTS as $recent_item) : ?>
-                    <div class="single-recent-article-item" data-aos="fade-up">
+                    <div class="single-recent-article-item class-<?php echo $recent_item['category_id'] ?>" data-aos="fade-up">
                         <a href="#!" class="recent-article-thum">
                             <img src="<?php echo $recent_item['img'] ?>" alt="<?php echo $recent_item['alt'] ?>" />
                         </a>
@@ -66,7 +71,9 @@
                         </div>
                     </div>
                 <?php endforeach ?>
+
                 <!-- Single recent Article Item End -->
+
             </div>
         </div>
     </div>

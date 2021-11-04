@@ -6,7 +6,7 @@
              <div class="header-style-center">
                  <div class="logo">
                      <a href="index.html">
-                         <img src="assets/images/logo/logo-3.png" alt="" />
+                         <img src="/assets/images/logo/logo-3.png" alt="" />
                      </a>
                  </div>
 

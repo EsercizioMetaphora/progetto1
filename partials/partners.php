@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title-three text-center mb-40" data-aos="fade-up">
-                    <h2 class="title">I nostri Partner</h2>
+                    <h2 class="title"><?php echo __('Home.I.Nostri.Partner') ?></h2>
                 </div>
             </div>
         </div>

@@ -37,7 +37,7 @@
                         <!-- logo -->
                         <div class="logo">
                             <a href="index.html">
-                                <img src="assets/images/logo/logo.png" class="img-fluid" alt="">
+                                <img src="/assets/images/logo/logo.png" class="img-fluid" alt="">
                             </a>
                         </div>
                     </div>

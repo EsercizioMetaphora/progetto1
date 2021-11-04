@@ -9,7 +9,7 @@
                             <div class="col-lg-6 col-md-6 order-2 order-md-1">
                                 <div class="hero-area-three-post text-left">
                                     <div class="hero-area-three-post-author">
-                                        By <a href="#"><?php echo $hero_item['author'] ?></a>
+                                    <?php echo __('Home.By') ?> <a href="#"><?php echo $hero_item['author'] ?></a>
                                     </div>
                                     <h1 class="title"><a href="blog-details.html"><?php echo $hero_item['title'] ?></a>
                                     </h1>

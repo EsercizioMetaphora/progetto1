@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule "^confirmation/(.*)"  "confirmation.php?esito=$1"
