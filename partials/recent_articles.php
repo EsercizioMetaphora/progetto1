@@ -31,33 +31,7 @@
                         </a>
                         <div class="recent-article-content">
                             <div class="recent-article-post-author">
-                                By <a href="#"><?php echo $recent_item['author'] ?></a>
-                            </div>
-                            <h3 class="title"><a href="blog-details.html"><?php echo $recent_item['title'] ?></a>
-                            </h3>
-                            <p class="dec mt-3"><?php echo $recent_item['description'] ?></p>
-                            <div class="recent-article-post-meta">
-                                <span class="post-date">
-                                    <a href="#"><?php echo $recent_item['datetime'] ?></a>
-                                </span>
-                                <span><?php echo $recent_item['readtime'] ?></span>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach ?>
-
-                <!-- Single recent Article Item End -->
-
-                <!-- Single Recent Article Item Start -->
-
-                <?php foreach (RECENTS as $recent_item) : ?>
-                    <div class="single-recent-article-item class-<?php echo $recent_item['category_id'] ?>" data-aos="fade-up">
-                        <a href="#!" class="recent-article-thum">
-                            <img src="<?php echo $recent_item['img'] ?>" alt="<?php echo $recent_item['alt'] ?>" />
-                        </a>
-                        <div class="recent-article-content">
-                            <div class="recent-article-post-author">
-                                By <a href="#"><?php echo $recent_item['author'] ?></a>
+                                <?php echo __('Home.By') ?> <a href="#"><?php echo $recent_item['author'] ?></a>
                             </div>
                             <h3 class="title"><a href="blog-details.html"><?php echo $recent_item['title'] ?></a>
                             </h3>

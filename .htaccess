@@ -1,2 +1,8 @@
 RewriteEngine On
-RewriteRule "^confirmation/(.*)"  "confirmation.php?esito=$1"
+RewriteRule "^confirmation/(.*)"  "confirmation.php?esito=$1" [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteRule "^$" "index.php" [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteRule "(.*)" "article.php?slug=$1" [L]

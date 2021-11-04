@@ -94,3 +94,11 @@ $footer_2 = $sth->fetchAll(\PDO::FETCH_ASSOC);
 define('WEBSITE_FOOTER_2', $footer_2);
 
 
+/* Slug Articles */
+
+if (isset($_GET['slug'])) {
+    $slug = $_GET['slug'];
+    $sth = $pdo->prepare("SELECT * FROM articles WHERE `slug` = '$slug' LIMIT 1");
+    $sth->execute();
+    $article_slug = $sth->fetch(\PDO::FETCH_ASSOC);
+}
