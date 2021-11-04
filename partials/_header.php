@@ -12,7 +12,7 @@
                 <nav class="navigation-menu">
                     <ul>
                     <?php foreach (HEADER_MENU as $menu) : ?>
-                                <li><a href="url.html"><span></span></a><?php echo $menu['nome']?></li>
+                                <li><a href="url.html"><span><?php echo $menu['nome']?></span></a></li>
                     <?php endforeach ?>
                     </ul>
                 </nav>

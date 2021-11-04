@@ -30,18 +30,18 @@ v<footer class="footer-area footer-three">
                             <div class="footer-widget-title">
                                 <h4 class="title">Iscriviti alla Newsletter</h4>
                             </div>
-                            <form>
-                            <div class="footer-subscribe-wrap">
-                                <div class="single-input">
-                                    <input type="text" placeholder="Your Name">
+                            <form action="/confirmation.php" method="POST">
+                                <div class="footer-subscribe-wrap">
+                                    <div class="single-input">
+                                        <input name="newsletter[name]" type="text" placeholder="Your Name">
+                                    </div>
+                                    <div class="single-input">
+                                        <input name="newsletter[email]" type="email" placeholder="Email Address">
+                                    </div>
+                                    <div class="button-box">
+                                        <button class="btn-primary btn-bg-3 btn-large" type="submit">Iscriviti</button>
+                                    </div>
                                 </div>
-                                <div class="single-input">
-                                    <input type="email" placeholder="Email Address">
-                                </div>
-                                <div class="button-box">
-                                    <button class="btn-primary btn-bg-3 btn-large" type="submit">Iscriviti </button>
-                                </div>
-                            </div>
                             </form>
                         </div>
                         <ul class="footer-socail-share">

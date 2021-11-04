@@ -124,7 +124,7 @@
                                             $categories = $sth->fetchAll(\PDO::FETCH_ASSOC);
                                         ?>
                                         <?php foreach ($categories as $categoryitem) : ?>
-                                            <a data-rel="<?php $categoryitem['id'] ?>" href="#" class="btn-primary-three btn-large categoryfilter"><?php echo $categoryitem['nome']?></a>
+                                            <a data-rel="<?php echo $categoryitem['id'] ?>" href="#" class="btn-primary-three btn-large categoryfilter"><?php echo $categoryitem['nome']?></a>
                                         <?php endforeach ?>
                                     </div>
                                 <?php endforeach ?>
@@ -150,10 +150,13 @@
 
                 var categorylist = document.getElementsByClassName('categoryfilter');
                 for (const elemento of categorylist) {
-                    elemento.addEventListener('click', function(e){
+                    elemento.addEventListener('click', function(e)
+                    {
                         e.preventDefault();
+                        console.log(elemento);
                         filtrapost(elemento.getAttribute('data-rel'));
-                    });
+                    }
+                );
                 }
                 
             </script>
