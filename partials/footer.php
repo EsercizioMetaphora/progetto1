@@ -11,8 +11,8 @@
                             </a>
                         </div>
                         <div class="info-text-box">
-                            <h6 class="sub-title">ALL SOLUTION IN ONE</h6>
-                            <h3 class="title">Unlimited Advice, Tutorial & Resource</h3>
+                            <h6 class="sub-title"><?php echo __('Home.Sottotitolo.Info.Text') ?></h6>
+                            <h3 class="title"><?php echo __('Home.Titolo.Info.Text') ?></h3>
                         </div>
 
                         <div class="button-right-box mb-20">
@@ -80,10 +80,10 @@
                 <div class="col-lg-2  col-md-6 col-sm-6">
                     <div class="single-footer-menu-item mt-30">
                         <div class="footer-widget-title">
-                            <h4 class="title">Azienda Srl</h4>
+                            <h4 class="title"><?php echo __('Home.Footer.Widget.Title') ?></h4>
                         </div>
                         <div class="footer-widget-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing eli
+                        <?php echo __('Home.Footer.Widget.Text') ?>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="copy-right-center">
-                        <p>© 2021 Footer del sito web</p>
+                        <p><?php echo __('Home.Footer.Copyright') ?></p>
                     </div>
                 </div>
             </div>
