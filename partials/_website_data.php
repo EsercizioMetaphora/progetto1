@@ -74,3 +74,4 @@ $partner = $sth->fetchAll(\PDO::FETCH_ASSOC);
 define('PARTNER', $partner);
 
 /* end footer nav */
+

@@ -16,10 +16,10 @@
         <!-- Swiper -->
         <div class="swiper-container most-popular-slider-active">
             <div class="swiper-wrapper">
+                <?php foreach (HEROES as $hero_item) : ?>
 
-                <div class="swiper-slide">
-                    <!-- Single Most Populer Item Start -->
-                    <?php foreach (HEROES as $hero_item) : ?>
+                    <div class="swiper-slide">
+                        <!-- Single Most Populer Item Start -->
                         <?php $autor = getAutor($hero_item['autor_id']) ?>
                         <div class="single-most-populer-item" data-aos="fade-up">
                             <a href="#!" class="most-populer-thum">
@@ -39,9 +39,9 @@
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach ?>
-                    <!-- Single Most Populer Item End -->
-                </div>
+                        <!-- Single Most Populer Item End -->
+                    </div>
+                <?php endforeach ?>
             </div>
         </div>
     </div>

@@ -8,7 +8,7 @@
                     </div>
                     <div class="search-box">
                         <div class="input-search-box" data-aos="fade-up">
-                            <input class="input" type="text" placeholder="Search here">
+                            <input class="input" name="q" value="<?php echo $get_q ?>" type="text" placeholder="Search here">
                             <button class="submit-button"><i class="icofont-search-1"></i></button>
                         </div>
                     </div>
