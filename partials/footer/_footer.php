@@ -28,18 +28,18 @@
                     <div class="col-lg-3 col-md-6 col-sm-7">
                         <div class="footer-widget footer-subscribe-area">
                             <div class="footer-widget-title">
-                                <h4 class="title"><?php echo __('Footer.Banner.Title') ?></h4>
+                                <h4 class="title"><?php echo __('Footer.Newsletter.Title') ?></h4>
                             </div>
-                            <form>
+                            <form method="POST" action="/confirmation.php">
                                 <div class="footer-subscribe-wrap">
                                     <div class="single-input">
-                                        <input type="text" placeholder="Your Name">
+                                        <input name="newsletter[name]" type="text" placeholder="Your Name">
                                     </div>
                                     <div class="single-input">
-                                        <input type="email" placeholder="Email Address">
+                                        <input name="newsletter[email]" type="email" placeholder="Email Address">
                                     </div>
                                     <div class="button-box">
-                                        <button class="btn-primary btn-bg-3 btn-large" type="submit"><?php echo __('Footer.Banner.button') ?></button>
+                                        <button class="btn-primary btn-bg-3 btn-large" type="submit"><?php echo __('Footer.Newsletter.button') ?></button>
                                     </div>
                                 </div>
                             </form>

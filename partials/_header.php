@@ -4,7 +4,7 @@
         <div class="container">
             <div class="header-style-center">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="assets/images/logo/logo-3.png" alt="" />
                     </a>
                 </div>
