@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
-<?php require 'db_connection.php'?>
-<?php require 'functions.php'?>
-<?php require 'website_data.php'?>
+<?php require 'db_connection.php' ?>
+<?php require 'functions.php' ?>
+<?php require 'website_data.php' ?>
 
 <head>
     <meta charset="utf-8">
@@ -66,40 +66,7 @@
 
 
     <!--========  header area =========-->
-    <header class="header header-three">
-
-        <div class="header-bottom-area">
-            <div class="container">
-                <div class="header-style-center">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/images/logo/logo-3.png" alt="" />
-                        </a>
-                    </div>
-                    <div class="main-menu-area text-center">
-                        <nav class="navigation-menu">
-                            <ul>
-                                <li><a href="url.html"><span>Menu di prova</span></a></li>
-                                <li><a href="url.html"><span>Menu di prova</span></a></li>
-                                <li><a href="url.html"><span>Menu di prova</span></a></li>
-                                <li><a href="url.html"><span>Menu di prova</span></a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="header-three-right-side">
- 
-                        <a href="action.html" class="sign-up-action-button btn-medium btn">
-                            Call To Action
-                        </a>
-                        <!-- mobile menu -->
-                        <div class="mobile-navigation-icon d-block d-lg-none" id="mobile-menu-trigger">
-                            <i></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php //require 'header.php'?>
     <!--======== End of header area  =========-->
 
 
@@ -114,107 +81,55 @@
         <div class="site-wrapper-reveal">
 
             <!-- Hero Area Start -->
+
+
             <div class="hero-area-three">
+
                 <div class="swiper-container hero-slider-three-active">
+
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 order-2 order-md-1">
-                                        <div class="hero-area-three-post text-left">
-                                            <div class="hero-area-three-post-author">
-                                                By <a href="#">Julian Marshall</a>
+                        <?php foreach ($slideshow as $slide_element) : ?>
+                            <div class="swiper-slide">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 order-2 order-md-1">
+                                            <div class="hero-area-three-post text-left">
+
+                                                <div class="hero-area-three-post-author">
+                                                    By <a href="#"><?php echo $slide_element['author'] ?></a>
+                                                </div>
+                                                <h1 class="title"><a href="<?php echo $slide_element['link'] ?>"><?php echo $slide_element['title'] ?></a>
+                                                </h1>
+                                                <p class="dec mt-4"><?php echo $slide_element['text'] ?></p>
+                                                <div class="hero-area-three-post-meta">
+                                                    <span class="hero-area-three-post-date">
+                                                        <a href="#"><?php echo $slide_element['date_article'] ?></a>
+                                                    </span>
+                                                    <span><?php echo $slide_element['reading_time'] ?></span>
+                                                </div>
+
                                             </div>
-                                            <h1 class="title"><a href="blog-details.html">WooLentor is a powerful
-                                                    WordPress plugin for
-                                                    WooCommerce</a>
-                                            </h1>
-                                            <p class="dec mt-4">That necessitates a robust ecommerce platform that
-                                                optimizes your store & products</p>
-                                            <div class="hero-area-three-post-meta">
-                                                <span class="hero-area-three-post-date">
-                                                <a href="#">03 April, 2021</a>
-                                            </span>
-                                                <span>10 min read</span>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 order-1 order-md-2">
+                                            <div class="hero-three-box">
+                                                <div class="hero-three-inner-image">
+                                                    <img src="<?php echo $slide_element['img'] ?>" alt="">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 order-1 order-md-2">
-                                        <div class="hero-three-box">
-                                            <div class="hero-three-inner-image">
-                                                <img src="assets/images/hero/home-3-hero-image-01.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-5 col-md-6 order-2 order-md-1">
-                                        <div class="hero-area-three-post text-left">
-                                            <div class="hero-area-three-post-author">
-                                                By <a href="#">Andrew Hoffman</a>
-                                            </div>
-                                            <h1 class="title"><a href="blog-details.html">All of these amazing features
-                                                    come at an affordable price!</a>
-                                            </h1>
-                                            <p class="dec mt-4">That necessitates a robust ecommerce platform that
-                                                optimizes your store & products</p>
-                                            <div class="hero-area-three-post-meta">
-                                                <span class="hero-area-three-post-date">
-                                                <a href="#">03 April, 2021</a>
-                                            </span>
-                                                <span>10 min read</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 offset-lg-1 col-md-6 order-1 order-md-2">
-                                        <div class="hero-three-box">
-                                            <div class="hero-three-inner-image">
-                                                <img src="assets/images/hero/home-3-hero-image-01.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-5 col-md-6 order-2 order-md-1">
-                                        <div class="hero-area-three-post text-left">
-                                            <div class="hero-area-three-post-author">
-                                                By <a href="#">Andrew Hoffman</a>
-                                            </div>
-                                            <h1 class="title"><a href="blog-details.html">All of these amazing features
-                                                    come at an affordable price!</a>
-                                            </h1>
-                                            <p class="dec mt-4">That necessitates a robust ecommerce platform that
-                                                optimizes your store & products</p>
-                                            <div class="hero-area-three-post-meta">
-                                                <span class="hero-area-three-post-date">
-                                                <a href="#">03 April, 2021</a>
-                                            </span>
-                                                <span>10 min read</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 offset-lg-1 col-md-6 order-1 order-md-2">
-                                        <div class="hero-three-box">
-                                            <div class="hero-three-inner-image">
-                                                <img src="assets/images/hero/home-3-hero-image-01.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
+
                 <div class="hero-swiper-pagination"></div>
-            </div><!-- Hero Area End -->
+
+            </div>
+
+            <!-- Hero Area End -->
 
             <div class="mostpopular-category-area section-space--pt_100">
                 <div class="container">
@@ -225,30 +140,25 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-lg-12">
+
                             <div class="hero-three-category">
+
                                 <div class="category-step-1" data-aos="fade-up">
-                                    <a href="#" class="btn-primary-three btn-large" onclick="<?php echo ChosenCategory($post_argument[1]) ?>">WooCommerce</a>
-                                    <a href="#" class="btn-primary-three btn-large">WordPress</a>
-                                    <a href="#" class="btn-primary-three btn-large">Magento</a>
-                                    <a href="#" class="btn-primary-three btn-large">Laravel</a>
-                                    <a href="#" class="btn-primary-three btn-large">UI/UX Design</a>
-                                </div>
-                                <div class="category-step-2" data-aos="fade-up">
-                                    <a href="#" class="btn-primary-three btn-large">Online Tutorial</a>
-                                    <a href="#" class="btn-primary-three btn-large">JavaScript</a>
-                                    <a href="#" class="btn-primary-three btn-large">Lifestyle</a>
-                                    <a href="#" class="btn-primary-three btn-large">Marketing</a>
-                                </div>
-                                <div class="category-step-3" data-aos="fade-up">
-                                    <a href="#" class="btn-primary-three btn-large">Magento</a>
-                                    <a href="#" class="btn-primary-three btn-large">UX Design</a>
-                                    <a href="#" class="btn-primary-three btn-large">Marketing</a>
+                                    <?php foreach ($post_category as $category) : ?>
+
+                                        <a href="<?php echo $category['href'] ?>" class="btn-primary-three btn-large"><?php echo $category['description'] ?></a>
+                                    <?php endforeach ?>
+
                                 </div>
                             </div>
                         </div>
+
                     </div>
+
+
                 </div>
             </div>
 
@@ -262,10 +172,12 @@
                                     <h2 class="title">Ultimi Post</h2>
                                 </div>
                                 <div class="search-box">
-                                    <div class="input-search-box" data-aos="fade-up">
-                                        <input class="input" type="text" placeholder="Search here">
-                                        <button class="submit-button"><i class="icofont-search-1"></i></button>
-                                    </div>
+                                    <form action="" method="GET">
+                                        <div class="input-search-box" data-aos="fade-up">
+                                            <input name="q" value="<?php echo $get_q ?>" class="input" type="text" placeholder="Search here">
+                                            <button class="submit-button"><i class="icofont-search-1"></i></button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
 
@@ -274,152 +186,34 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <!-- Single Recent Article Item Start -->
-                            <div class="single-recent-article-item" data-aos="fade-up">
-                                <a href="#!" class="recent-article-thum">
-                                    <img src="assets/images/recent-article/02-recent-article.jpg" alt="" />
-                                </a>
-                                <div class="recent-article-content">
-                                    <div class="recent-article-post-author">
-                                        By <a href="#">Andrew Hoffman</a>
-                                    </div>
-                                    <h3 class="title"><a href="blog-details.html">All of these amazing features
-                                            come at an affordable price!</a>
-                                    </h3>
-                                    <p class="dec mt-3">Lorem Ipsum is simply dummy text themes print
-                                        industry orem psum has been them industry spa
-                                        also the loep into type setting.</p>
-                                    <div class="recent-article-post-meta">
-                                        <span class="post-date">
-                                        <a href="#">03 April, 2021</a>
-                                    </span>
-                                        <span>10 min read</span>
-                                    </div>
-                                </div>
-                            </div><!-- Single recent Article Item End -->
+                            <?php foreach ($post as $post_position) : ?>
+                                <div class="single-recent-article-item class-<?php echo $post_position['category_id'] ?>" data-aos="fade-up">
 
-                            <!-- Single Recent Article Item Start -->
-                            <div class="single-recent-article-item" data-aos="fade-up">
-                                <a href="#!" class="recent-article-thum">
-                                    <img src="assets/images/recent-article/10-recent-article.jpg" alt="" />
-                                </a>
-                                <div class="recent-article-content">
-                                    <div class="recent-article-post-author">
-                                        By <a href="#">Andrew Hoffman</a>
+                                    <a href="#!" class="recent-article-thum">
+                                        <img src="<?php echo $post_position['img'] ?>" alt="" />
+                                    </a>
+                                    <div class="recent-article-content">
+                                        <div class="recent-article-post-author">
+                                            By <a href="#"><?php echo $post_position['author'] ?></a>
+                                        </div>
+                                        <h3 class="title"><a href="blog-details.html"><?php echo $post_position['title'] ?></a>
+                                        </h3>
+                                        <p class="dec mt-3"><?php echo $post_position['text'] ?></p>
+                                        <div class="recent-article-post-meta">
+                                            <span class="post-date">
+                                                <a href="#"><?php echo $post_position['date_article'] ?></a>
+                                            </span>
+                                            <span><?php echo $post_position['time_read'] ?></span>
+                                        </div>
                                     </div>
-                                    <h3 class="title"><a href="blog-details.html">Create beautiful designs that
-                                            will help convert more...</a>
-                                    </h3>
-                                    <p class="dec mt-3">Lorem Ipsum is simply dummy text themes print
-                                        industry orem psum has been them industry spa
-                                        also the loep into type setting.</p>
-                                    <div class="recent-article-post-meta">
-                                        <span class="post-date">
-                                        <a href="#">03 April, 2021</a>
-                                    </span>
-                                        <span>10 min read</span>
-                                    </div>
-                                </div>
-                            </div><!-- Single recent Article Item End -->
 
-                            <!-- Single Recent Article Item Start -->
-                            <div class="single-recent-article-item" data-aos="fade-up">
-                                <a href="#!" class="recent-article-thum">
-                                    <img src="assets/images/recent-article/01-recent-article.jpg" alt="" />
-                                </a>
-                                <div class="recent-article-content">
-                                    <div class="recent-article-post-author">
-                                        By <a href="#">Andrew Hoffman</a>
-                                    </div>
-                                    <h3 class="title"><a href="blog-details.html">All of these amazing features
-                                            come at an affordable price!</a>
-                                    </h3>
-                                    <p class="dec mt-3">Lorem Ipsum is simply dummy text themes print
-                                        industry orem psum has been them industry spa
-                                        also the loep into type setting.</p>
-                                    <div class="recent-article-post-meta">
-                                        <span class="post-date">
-                                        <a href="#">03 April, 2021</a>
-                                    </span>
-                                        <span>10 min read</span>
-                                    </div>
-                                </div>
-                            </div><!-- Single recent Article Item End -->
+                                </div><!-- Single recent Article Item End -->
+                            <?php endforeach ?>
 
-                            <!-- Single Recent Article Item Start -->
-                            <div class="single-recent-article-item" data-aos="fade-up">
-                                <a href="#!" class="recent-article-thum">
-                                    <img src="assets/images/recent-article/05-recent-article.jpg" alt="" />
-                                </a>
-                                <div class="recent-article-content">
-                                    <div class="recent-article-post-author">
-                                        By <a href="#">Andrew Hoffman</a>
-                                    </div>
-                                    <h3 class="title"><a href="blog-details.html">Create beautiful designs that
-                                            will help convert more...</a>
-                                    </h3>
-                                    <p class="dec mt-3">Lorem Ipsum is simply dummy text themes print
-                                        industry orem psum has been them industry spa
-                                        also the loep into type setting.</p>
-                                    <div class="recent-article-post-meta">
-                                        <span class="post-date">
-                                        <a href="#">03 April, 2021</a>
-                                    </span>
-                                        <span>10 min read</span>
-                                    </div>
-                                </div>
-                            </div><!-- Single recent Article Item End -->
-
-                            <!-- Single Recent Article Item Start -->
-                            <div class="single-recent-article-item" data-aos="fade-up">
-                                <a href="#!" class="recent-article-thum">
-                                    <img src="assets/images/recent-article/08-recent-article.jpg" alt="" />
-                                </a>
-                                <div class="recent-article-content">
-                                    <div class="recent-article-post-author">
-                                        By <a href="#">Andrew Hoffman</a>
-                                    </div>
-                                    <h3 class="title"><a href="blog-details.html">All of these amazing features
-                                            come at an affordable price!</a>
-                                    </h3>
-                                    <p class="dec mt-3">Lorem Ipsum is simply dummy text themes print
-                                        industry orem psum has been them industry spa
-                                        also the loep into type setting.</p>
-                                    <div class="recent-article-post-meta">
-                                        <span class="post-date">
-                                        <a href="#">03 April, 2021</a>
-                                    </span>
-                                        <span>10 min read</span>
-                                    </div>
-                                </div>
-                            </div><!-- Single recent Article Item End -->
-
-                            <!-- Single Recent Article Item Start -->
-                            <div class="single-recent-article-item" data-aos="fade-up">
-                                <a href="#!" class="recent-article-thum">
-                                    <img src="assets/images/recent-article/03-recent-article.jpg" alt="" />
-                                </a>
-                                <div class="recent-article-content">
-                                    <div class="recent-article-post-author">
-                                        By <a href="#">Andrew Hoffman</a>
-                                    </div>
-                                    <h3 class="title"><a href="blog-details.html">Create beautiful designs that
-                                            will help convert more...</a>
-                                    </h3>
-                                    <p class="dec mt-3">Lorem Ipsum is simply dummy text themes print
-                                        industry orem psum has been them industry spa
-                                        also the loep into type setting.</p>
-                                    <div class="recent-article-post-meta">
-                                        <span class="post-date">
-                                        <a href="#">03 April, 2021</a>
-                                    </span>
-                                        <span>10 min read</span>
-                                    </div>
-                                </div>
-                            </div><!-- Single recent Article Item End -->
 
                         </div>
 
-                         
+
                     </div>
                 </div>
             </div>
@@ -466,101 +260,35 @@
                         </div>
                     </div>
                     <!-- Swiper -->
+
                     <div class="swiper-container most-popular-slider-active">
                         <div class="swiper-wrapper">
 
                             <div class="swiper-slide">
-                                <!-- Single Most Populer Item Start -->
-                                <div class="single-most-populer-item" data-aos="fade-up">
-                                    <a href="#!" class="most-populer-thum">
-                                        <img src="assets/images/populer/01_populer.jpg" alt="" />
-                                    </a>
-                                    <div class="most-populer-content">
-                                        <div class="most-populer-post-author">
-                                            By <a href="#">Andrew Hoffman</a>
-                                        </div>
-                                        <h3 class="title"><a href="blog-details.html">All of these amazing features
-                                                come at an affordable price!</a>
-                                        </h3>
-                                        <div class="most-populer-post-meta">
-                                            <span class="post-date">
-                                            <a href="#">03 April, 2021</a>
-                                        </span>
-                                            <span>10 min read</span>
+                                <?php foreach ($news_week as $news_position) : ?>
+
+                                    <!-- Single Most Populer Item Start -->
+                                    <div class="single-most-populer-item" data-aos="fade-up">
+                                        <a href="#!" class="most-populer-thum">
+                                            <img src="<?php echo $news_position['img'] ?>" alt="" />
+                                        </a>
+                                        <div class="most-populer-content">
+                                            <div class="most-populer-post-author">
+                                                By <a href="#"><?php echo $news_position['author'] ?></a>
+                                            </div>
+                                            <h3 class="title"><a href="blog-details.html"><?php echo $news_position['title'] ?></a>
+                                            </h3>
+                                            <div class="most-populer-post-meta">
+                                                <span class="post-date">
+                                                    <a href="#"><?php echo $news_position['date'] ?></a>
+                                                </span>
+                                                <span><?php echo $news_position['read_time'] ?></span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div><!-- Single Most Populer Item End -->
+                                <?php endforeach ?>
+                                <!-- Single Most Populer Item End -->
                             </div>
-
-                            <div class="swiper-slide">
-                                <!-- Single Most Populer Item Start -->
-                                <div class="single-most-populer-item" data-aos="fade-up">
-                                    <a href="#!" class="most-populer-thum">
-                                        <img src="assets/images/populer/02_populer.jpg" alt="" />
-                                    </a>
-                                    <div class="most-populer-content">
-                                        <div class="most-populer-post-author">
-                                            By <a href="#">Andrew Hoffman</a>
-                                        </div>
-                                        <h3 class="title"><a href="blog-details.html">WooCommerce comes with an
-                                                intuitive drag-and-drop...</a>
-                                        </h3>
-                                        <div class="most-populer-post-meta">
-                                            <span class="post-date">
-                                            <a href="#">03 April, 2021</a>
-                                        </span>
-                                            <span>10 min read</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Most Populer Item End -->
-                            </div>
-
-                            <div class="swiper-slide">
-                                <!-- Single Most Populer Item Start -->
-                                <div class="single-most-populer-item" data-aos="fade-up">
-                                    <a href="#!" class="most-populer-thum">
-                                        <img src="assets/images/populer/03_populer.jpg" alt="" />
-                                    </a>
-                                    <div class="most-populer-content">
-                                        <div class="most-populer-post-author">
-                                            By <a href="#">Andrew Hoffman</a>
-                                        </div>
-                                        <h3 class="title"><a href="blog-details.html">Create beautiful designs that
-                                                will help convert more...</a>
-                                        </h3>
-                                        <div class="most-populer-post-meta">
-                                            <span class="post-date">
-                                            <a href="#">03 April, 2021</a>
-                                        </span>
-                                            <span>10 min read</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Most Populer Item End -->
-                            </div>
-
-                            <div class="swiper-slide">
-                                <!-- Single Most Populer Item Start -->
-                                <div class="single-most-populer-item" data-aos="fade-up">
-                                    <a href="#!" class="most-populer-thum">
-                                        <img src="assets/images/populer/02_populer.jpg" alt="" />
-                                    </a>
-                                    <div class="most-populer-content">
-                                        <div class="most-populer-post-author">
-                                            By <a href="#">Andrew Hoffman</a>
-                                        </div>
-                                        <h3 class="title"><a href="blog-details.html">WooCommerce comes with an
-                                                intuitive drag-and-drop...</a>
-                                        </h3>
-                                        <div class="most-populer-post-meta">
-                                            <span class="post-date">
-                                            <a href="#">03 April, 2021</a>
-                                        </span>
-                                            <span>10 min read</span>
-                                        </div>
-                                    </div>
-                                </div><!-- Single Most Populer Item End -->
-                            </div>
-
                         </div>
 
                     </div>
@@ -582,25 +310,17 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="trusted-partners-box" data-aos="fade-up">
+                                
                                 <div class="swiper-container trusted-partners-slider-active">
                                     <div class="swiper-wrapper trusted-partners-slider-wrap">
+                                    <?php foreach($partners as $partner_item): ?>
                                         <div class="swiper-slide">
-                                            <a href="#!"><img src="assets/images/partners/01-partners.png" alt="" /></a>
+                                            <a href="<?php echo $partner_item['url'] ?>"><img src="<?php echo $partner_item['img']?>" alt="<?php echo $partner_item['alt']?>" /></a>
                                         </div>
-                                        <div class="swiper-slide">
-                                            <a href="#!"><img src="assets/images/partners/02-partners.png" alt="" /></a>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="#!"><img src="assets/images/partners/03-partners.png" alt="" /></a>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="#!"><img src="assets/images/partners/04-partners.png" alt="" /></a>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="#!"><img src="assets/images/partners/02-partners.png" alt="" /></a>
-                                        </div>
+                                        <? endforeach ?>
                                     </div>
                                 </div>
+                                
                             </div>
                             <div class="partners-swiper-pagination"></div>
                         </div>
@@ -654,18 +374,18 @@
                             <div class="footer-widget-title">
                                 <h4 class="title">Iscriviti alla Newsletter</h4>
                             </div>
-                            <form>
-                            <div class="footer-subscribe-wrap">
-                                <div class="single-input">
-                                    <input type="text" placeholder="Your Name">
+                            <form action="./confirmation.php" method="POST">
+                                <div class="footer-subscribe-wrap">
+                                    <div class="single-input">
+                                        <input type="text" placeholder="Your Name">
+                                    </div>
+                                    <div class="single-input">
+                                        <input type="email" placeholder="Email Address">
+                                    </div>
+                                    <div class="button-box">
+                                        <button class="btn-primary btn-bg-3 btn-large" type="submit">Iscriviti </button>
+                                    </div>
                                 </div>
-                                <div class="single-input">
-                                    <input type="email" placeholder="Email Address">
-                                </div>
-                                <div class="button-box">
-                                    <button class="btn-primary btn-bg-3 btn-large" type="submit">Iscriviti </button>
-                                </div>
-                            </div>
                             </form>
                         </div>
                         <ul class="footer-socail-share">
@@ -709,7 +429,7 @@
                                 <h4 class="title">Azienda Srl</h4>
                             </div>
                             <div class="footer-widget-text">
-Lorem ipsum dolor sit amet, consectetur adipiscing eli
+                                Lorem ipsum dolor sit amet, consectetur adipiscing eli
                             </div>
                         </div>
                     </div>
