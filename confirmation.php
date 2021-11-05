@@ -1,12 +1,14 @@
-<?php
-require_once 'partials/db_connection.php';
+<?php require('partials/db_connection.php');
+
 if (is_array($_POST['newsletter'])) {
     $newsletter = $_POST['newsletter'];
     $nome = $newsletter['name'];
     $email = $newsletter['email'];
+
     $sth = $pdo->prepare("SELECT * FROM accounts WHERE email = '$email' LIMIT 1");
     $sth->execute();
     $account = $sth->fetch(\PDO::FETCH_ASSOC);
+
     if (is_Array($account)) {
 
         $messaggio = "L'utente risulta già registrato.";
@@ -31,10 +33,27 @@ if (isset($_GET['esito'])) {
 }
 ?>
 
-<?php require_once 'partials/header_new.php' ?>
+<?php require('partials/website_data.php') ?>
+<?php require('partials/functions.php') ?>
 
 
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
 
-<h1><?php echo $messaggio ?></h1>
+<?php require('partials/head.php') ?>
+
+<body class="theme-color-three">
+
+    <?php require('partials/header.php') ?>
+
+    <div id="main-wrapper">
+        <div class="site-wrapper-reveal">
+
+            <h1><?php echo $messaggio ?></h1>
+
+            <?php require('partials/footer.php') ?>
+
+            <?php require('partials/script.php') ?>
+
 
 </body>

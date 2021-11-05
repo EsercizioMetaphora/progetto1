@@ -16,7 +16,7 @@
                         </div>
 
                         <div class="button-right-box mb-20">
-                            <a href="#!" class="btn-primary btn-large">Call to action <i class="icofont-long-arrow-right"></i></a>
+                            <a href="#!" class="btn-primary btn-large"><?php echo __('Home.Call.to.action.Bottom') ?><i class="icofont-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-7">
                     <div class="footer-widget footer-subscribe-area">
                         <div class="footer-widget-title">
-                            <h4 class="title"><?php echo __('Home.Unisciti.alla.Newsletter') ?></h4>
+                            <h4 class="title"><?php echo __('Home.Iscriviti.alla.Newsletter') ?></h4>
                         </div>
                         <form action="/confirmation.php" method="POST">
                             <div class="footer-subscribe-wrap">
@@ -83,7 +83,7 @@
                             <h4 class="title"><?php echo __('Home.Footer.Widget.Title') ?></h4>
                         </div>
                         <div class="footer-widget-text">
-                        <?php echo __('Home.Footer.Widget.Text') ?>
+                            <?php echo __('Home.Footer.Widget.Text') ?>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,3 @@
 </footer>
 <!--=====  End of footer area ========-->
 
-<?php require 'partials/script.php' ?>
-</body>
-
-</html>

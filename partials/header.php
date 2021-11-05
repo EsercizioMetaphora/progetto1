@@ -22,9 +22,7 @@
 
                  <div class="header-three-right-side">
 
-                     <a href="action.html" class="sign-up-action-button btn-medium btn">
-                         Call To Action
-                     </a>
+                     <a href="action.html" class="sign-up-action-button btn-medium btn"><?php echo __('Home.Call.to.action.Top') ?></a>
                      <!-- mobile menu -->
                      <div class="mobile-navigation-icon d-block d-lg-none" id="mobile-menu-trigger">
                          <i></i>
@@ -33,6 +31,6 @@
              </div>
          </div>
      </div>
-     
+
  </header>
  <!--======== End of header area  =========-->
