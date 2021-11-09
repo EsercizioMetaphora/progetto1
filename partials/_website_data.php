@@ -78,9 +78,14 @@ $partner = $sth->fetchAll(\PDO::FETCH_ASSOC);
 define('PARTNER', $partner);
 
 /* end footer nav */
+
+/* SLUG THING */
+
 if (isset($_GET['slug'])) {
     $slug = $_GET['slug'];
     $sth = $pdo->prepare("SELECT * FROM article WHERE `slug` = '$slug' LIMIT 1");
     $sth->execute();
     $article_slug = $sth->fetch(\PDO::FETCH_ASSOC);
 }
+
+/* END SLUG */
