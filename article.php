@@ -1,4 +1,5 @@
-<?php require 'partials/_db_connection.php';
+<?php
+require 'partials/_db_connection.php';
 require 'partials/_website_data.php';
 
 if (!($article_slug)) {
@@ -63,34 +64,37 @@ if (!($article_slug)) {
 
 <body>
     <?php require 'partials/_header.php' ?>
-
-    <div class="row">
-        <div class="col-lg-12">
-            <?php $autor = getAutor($article_slug['autor_id']) ?>
-            <!-- Single Recent Article Item Start -->
-            <div class="single-recent-article-item" data-aos="fade-up">
-                <a href="#!" class="recent-article-thum">
-                    <img src="<?php echo $article_slug['img'] ?>" alt="" />
-                </a>
-                <div class="recent-article-content">
-                    <div class="recent-article-post-author">
-                        <?php echo __('Home.By') ?> <a href="#"><?php echo $autor['nome'] . " " . $autor['cognome'] ?></a>
-                    </div>
-                    <h3 class="title"><a href="blog-details.html"><?php echo $article_slug['titolo'] ?></a>
-                    </h3>
-                    <p class="dec mt-3"><?php echo $article_slug['testo'] ?></p>
-                    <div class="recent-article-post-meta">
-                        <span class="post-date">
-                            <a href="#"><?php echo $article_slug['art_date'] ?></a>
-                        </span>
-                        <span><?php echo $article_slug['read_time'] ?></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="single-article-article-item" data-aos="fade-up">
+                    <a href="#!" class="article-article-thum">
+                        <img src="<?php echo $article_slug['img'] ?>" alt="<?php echo $article_slug['alt'] ?>" />
+                    </a>
+                    <div class="article-article-content">
+                        <div class="article-article-post-author">
+                            <?php echo __('Home.By') ?> <a href="#"><?php echo $article_slug['author'] ?></a>
+                        </div>
+                        <h3 class="title"><a href="blog-details.html"><?php echo $article_slug['title'] ?></a>
+                        </h3>
+                        <p class="dec mt-3"><?php echo $article_slug['description'] ?></p>
+                        <div class="article-article-post-meta">
+                            <span class="post-date">
+                                <a href="#"><?php echo $article_slug['datetime'] ?></a>
+                            </span>
+                            <span><?php echo $article_slug['readtime'] ?></span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Single recent Article Item End -->
         </div>
     </div>
 
+    <?php require 'partials/_footer.php' ?>
+
+    <!-- JS
+    ============================================ -->
+    <!-- Modernizer JS -->
     <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
     <!-- jQuery JS -->
@@ -122,10 +126,11 @@ if (!($article_slug)) {
     <script src="/assets/js/plugins/ajax.mail.js"></script>
 
     <!-- Plugins JS (Please remove the comment from below plugins.min.js for better website load performance and remove plugin js files from avobe) -->
-    <!-- <script src="/assets/js/vendor/vendor.min.js"></script>
-<script src="/assets/js/plugins/plugins.min.js"></script> -->
+    <!-- <script src="assets/js/vendor/vendor.min.js"></script>
+    <script src="assets/js/plugins/plugins.min.js"></script> -->
 
 
     <!-- Main JS -->
     <script src="/assets/js/main.js"></script>
+
 </body>
