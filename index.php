@@ -15,6 +15,7 @@
 <?php require('partials/pizzaioli.php') ?>
 <?php require('partials/script.php') ?>
 <?php require('partials/footer.php') ?>
+
 </body>
 
 </html>

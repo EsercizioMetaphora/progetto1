@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fancy navbar-light navbar-bg-light caret-none">
     <div class="container">
-        <div class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+        <div class="navbar-collapse-wrapper bg-primary d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
             <div class="navbar-brand w-100">
                 <a href="./index.html">
                     <img src="_immagini/Pizzeria/LOGO.png" class="w-50" srcset="" alt="Logo" />

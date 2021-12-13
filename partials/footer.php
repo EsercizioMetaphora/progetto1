@@ -1,7 +1,7 @@
 <footer>
 
     <div class="mapouter">
-        <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Via%20Roma%2010%20Arezzo&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.online-timer.net"></a><br>
+        <div class="gmap_canvas"><iframe width="500" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Via%20Roma%2010%20Arezzo&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.online-timer.net"></a><br>
             <style>
                 .mapouter {
                     position: relative;
@@ -20,11 +20,7 @@
             </style>
         </div>
     </div>
-    <div class="widget">
 
-        <p class="lead mb-0"><?php echo __('Home.Ci.Troviamo.Qui') ?></p>
-    </div>
-    </div>
     <div class="col-lg-3 offset-lg-2">
         <div class="widget">
             <div class="d-flex flex-row">
