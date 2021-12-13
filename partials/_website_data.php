@@ -1,15 +1,6 @@
 <?php
-/* NAVBAR */
-/* $sth = $pdo->prepare("SELECT * FROM navigation_menu ORDER BY ord");
-$sth->execute();
 
-$menu = $sth->fetchAll(\PDO::FETCH_ASSOC);
-
-define('WEBSITE_MENU', $menu);
- */
-/* NAVBAR END */
-
-/* CAROSELLO CORSI */
+/* ACTIVITIES */
 
 $sth = $pdo->prepare("SELECT * FROM activities");
 $sth->execute();
@@ -18,9 +9,9 @@ $activity_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 define('ACTIVITIES', $activity_list);
 
-/* FINE CAROSELLO CORSI */
+/* FINE ACTIVITIES*/
 
-/* PERSONAL TRAINER */
+/* STAFF*/
 
 $sth = $pdo->prepare("SELECT * FROM staff");
 $sth->execute();
@@ -29,9 +20,9 @@ $staff_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 define('STAFF', $staff_list);
 
-/* FINE PERSONAL TRAINER */
+/* FINE STAFF */
 
-/* ABBONAMENTI */
+/* MENU */
 
 $sth = $pdo->prepare("SELECT * FROM menu");
 $sth->execute();
@@ -40,7 +31,7 @@ $menu_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 define('MENU', $menu_list);
 
-/* FINE ABBONAMENTI */
+/* FINE MENU */
 
 
 /* CATEGORY END */
