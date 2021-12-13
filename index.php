@@ -70,12 +70,12 @@
 				<div class="carousel owl-carousel text-center" data-margin="30" data-dots="true" data-autoplay="false" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "2"}, "1200":{"items": "3"}}'>
 				<?php foreach (PIZZAIOLI as $pizzaiolo) : ?>
 					<div class="item">
-						<img class="rounded-circle w-20 mx-auto mb-4" src="./assets/img/avatars/t1.jpg" srcset="./assets/img/avatars/t1@2x.jpg 2x" alt="" />
+						<img class="rounded-circle w-20 mx-auto mb-4" src="<?php echo $pizzaiolo["img"] ?>" alt="" />
 						<h4 class="mb-1"><?php echo $pizzaiolo["name"] ?> <?php echo $pizzaiolo["surname"] ?></h4>
 						</nav>
 						<!-- /.social -->
 					</div>
-					<?php endforeach ?>
+				<?php endforeach ?>
 				</div>
 				<!-- /.owl-carousel -->
 			</div>
