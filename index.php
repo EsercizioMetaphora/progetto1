@@ -10,8 +10,12 @@
 
 <body>
 </br>
-    <!-- CAROSELLO CORSI -->
-    <!-- FINE FOOTER -->
+    <!-- ABOUT US -->
+    <?php require 'partials/_about_us.php' ?>
+    <!-- FINE ABOUT US -->
+    <!-- MENU -->
+    <?php require 'partials/_menu.php' ?>
+    <!-- FINE MENU -->
 </body>
 
 <?php require 'partials/_scripts.php' ?>

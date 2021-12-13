@@ -33,6 +33,17 @@ define('MENU', $menu_list);
 
 /* FINE MENU */
 
+/* IMMAGINI PIZZA */
+
+$sth = $pdo->prepare("SELECT * FROM pizza_imgs");
+$sth->execute();
+
+$img_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+define('IMG', $img_list);
+
+/* FINE IMMAGINI PIZZA  */
+
 
 /* CATEGORY END */
 
