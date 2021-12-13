@@ -9,6 +9,7 @@
         <!-- /.widget -->
       </div>
       <!-- /column -->
+	  <?php foreach (FOOTER_MENU as $footermenu) : ?>
       <div class="col-lg-3 offset-lg-2">
         <div class="widget">
           <div class="d-flex flex-row">
@@ -16,30 +17,15 @@
               <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-phone-volume"></i> </div>
             </div>
             <div>
-              <h5 class="mb-1">Phone</h5>
-              <p class="mb-0">00 (123) 456 78 90 <br class="d-none d-md-block" />00 (987) 654 32 10</p>
+              <h5 class="mb-1"><?php echo $footermenu["name"] ?></h5>
+			  <p class="lead mb-0"><?php echo $footermenu["link"] ?></p>
             </div>
           </div>
           <!--/div -->
         </div>
         <!-- /.widget -->
       </div>
-      <!-- /column -->
-      <div class="col-lg-3">
-        <div class="widget">
-          <div class="d-flex flex-row">
-            <div>
-              <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-location-pin-alt"></i> </div>
-            </div>
-            <div class="align-self-start justify-content-start">
-              <h5 class="mb-1">Address</h5>
-              <address>Moonshine St. 14/05 Light City, London, United Kingdom</address>
-            </div>
-          </div>
-          <!--/div -->
-        </div>
-        <!-- /.widget -->
-      </div>
+	  <?php endforeach ?>
       <!-- /column -->
     </div>
     <!--/.row -->
@@ -58,4 +44,8 @@
   </div>
   <!-- /.container -->
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+  <script src="./assets/js/plugins.js"></script>
+  <script src="./assets/js/theme.js"></script>
 </body>
