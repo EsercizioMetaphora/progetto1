@@ -1,104 +1,29 @@
-<nav class="navbar navbar-expand-lg classic transparent navbar-dark">
+<nav class="navbar navbar-expand-lg classic navbar-dark navbar-bg-dark">
   <div class="container flex-lg-row flex-nowrap align-items-center">
     <div class="navbar-brand w-100">
       <a href="./index.html">
-        <img class="logo-dark" src="./assets/img/logo.png" srcset="./assets/img/logo@2x.png 2x" alt="" />
-        <img class="logo-light" src="./assets/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" />
+        <img src="<?php echo $about[0]['logo'] ?>" class="logo"/>
       </a>
     </div>
     <div class="navbar-collapse offcanvas-nav">
       <div class="offcanvas-header d-lg-none d-xl-none">
-        <a href="./index.html"><img src="./assets/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" /></a>
+        <a href="./index.html"><img src="<?php echo $about[0]['logo'] ?>" class="logo"/></a>
         <button type="button" class="btn-close btn-close-white offcanvas-close offcanvas-nav-close" aria-label="Close"></button>
       </div>
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#">Dropdown</a>
-          <ul class="dropdown-menu">
-            <li class="nav-item"><a class="dropdown-item" href="#">Action</a></li>
-            <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#">Dropdown</a>
-              <ul class="dropdown-menu">
-                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#">Dropdown</a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item"><a class="dropdown-item" href="#">Action</a></li>
-                    <li class="nav-item"><a class="dropdown-item" href="#">Another Action</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item"><a class="dropdown-item" href="#">Action</a></li>
-                <li class="nav-item"><a class="dropdown-item" href="#">Another Action</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="dropdown-item" href="#">Another Action</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="#">Mega Menu</a>
-          <ul class="dropdown-menu mega-menu">
-            <li class="mega-menu-content">
-              <div class="row gx-0 gx-lg-3">
-                <div class="col-lg-6">
-                  <h6 class="dropdown-header">One</h6>
-                  <div class="row gx-0">
-                    <div class="col-lg-6">
-                      <ul class="list-unstyled">
-                        <li><a class="dropdown-item" href="#">Link</a></li>
-                        <li><a class="dropdown-item" href="#">Link</a></li>
-                        <li><a class="dropdown-item" href="#">Link</a></li>
-                      </ul>
-                    </div>
-                    <!--/column -->
-                    <div class="col-lg-6">
-                      <ul class="list-unstyled">
-                        <li><a class="dropdown-item" href="#">Link</a></li>
-                        <li><a class="dropdown-item" href="#">Link</a></li>
-                        <li><a class="dropdown-item" href="#">Link</a></li>
-                      </ul>
-                    </div>
-                    <!--/column -->
-                  </div>
-                  <!--/.row -->
-                </div>
-                <!--/column -->
-                <div class="col-lg-3">
-                  <h6 class="dropdown-header">Two</h6>
-                  <ul class="list-unstyled">
-                    <li><a class="dropdown-item" href="#">Link</a></li>
-                    <li><a class="dropdown-item" href="#">Link</a></li>
-                    <li><a class="dropdown-item" href="#">Link</a></li>
-                  </ul>
-                </div>
-                <!--/column -->
-                <div class="col-lg-3">
-                  <h6 class="dropdown-header">Three</h6>
-                  <ul class="list-unstyled">
-                    <li><a class="dropdown-item" href="#">Link</a></li>
-                    <li><a class="dropdown-item" href="#">Link</a></li>
-                    <li><a class="dropdown-item" href="#">Link</a></li>
-                  </ul>
-                </div>
-                <!--/column -->
-              </div>
-              <!--/.row -->
-            </li>
-            <!--/.mega-menu-content-->
-          </ul>
-          <!--/.dropdown-menu -->
-        </li>
-        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+      <?php foreach (HEADER_MENU as $headermenu) : ?>
+        <li class="nav-item"><a class="nav-link" href="<?php echo $headermenu['link'] ?>"><?php echo $headermenu['name'] ?></a></li>
+      <?php endforeach ?>
       </ul>
       <!-- /.navbar-nav -->
     </div>
     <!-- /.navbar-collapse -->
     <div class="navbar-other ms-lg-4">
       <ul class="navbar-nav flex-row align-items-center ms-auto" data-sm-skip="true">
-        <li class="nav-item"><a class="nav-link" data-toggle="offcanvas-info"><i class="uil uil-info-circle"></i></a></li>
-        <li class="nav-item d-none d-md-block">
-          <a href="#" class="btn btn-sm btn-white rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-01">Sign In</a>
-        </li>
         <li class="nav-item d-lg-none">
           <div class="navbar-hamburger"><button class="hamburger animate plain" data-toggle="offcanvas-nav"><span></span></button></div>
         </li>
       </ul>
-      <!-- /.navbar-nav -->
     </div>
     <!-- /.navbar-other -->
     <div class="offcanvas-info text-inverse">
