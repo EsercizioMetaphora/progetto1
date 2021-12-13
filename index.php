@@ -1,6 +1,7 @@
 <?php require('partials/db_connection.php') ?>
-<?php require('partials/website_data.php') ?>
 <?php require('partials/functions.php') ?>
+<?php require('partials/website_data.php') ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,14 +10,11 @@
 
 <body>
 
-  <?php require('partials/header.php') ?>
-  <?php require('partials/story.php') ?>
-  <?php require('partials/pizze.php') ?>
-  <?php require('partials/trainers.php') ?>
-  <?php require('partials/abbonamenti.php') ?>
-  <?php require('partials/footer.php') ?>
-  <?php require('partials/script.php') ?>
-
+<?php require('partials/header.php') ?>
+<?php require('partials/home.php') ?>
+<?php require('partials/pizzaioli.php') ?>
+<?php require('partials/script.php') ?>
+<?php require('partials/footer.php') ?>
 </body>
 
 </html>
