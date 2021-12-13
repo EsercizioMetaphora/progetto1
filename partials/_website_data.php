@@ -1,5 +1,17 @@
 <?php
 
+/* WE ARE */
+
+$sth = $pdo->prepare("SELECT * FROM we_are");
+$sth->execute();
+
+$we_are_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+define('WEARE', $we_are_list);
+
+/* FINE  WE ARE */
+
+
 /* ACTIVITIES */
 
 $sth = $pdo->prepare("SELECT * FROM activities");
@@ -44,6 +56,16 @@ define('IMG', $img_list);
 
 /* FINE IMMAGINI PIZZA  */
 
+/* COMMENTS */
+
+$sth = $pdo->prepare("SELECT * FROM pizza_imgs");
+$sth->execute();
+
+$comments_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+define('COMMENTS', $comments_list);
+
+/* FINE COMMENTS */
 
 /* CATEGORY END */
 

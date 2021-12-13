@@ -6,7 +6,6 @@
 
 <!-- HEAD -->
 <?php require 'partials/_head.php' ?>
-<!-- FINE HEAD -->
 
 <body>
     <!-- ABOUT US -->
@@ -15,15 +14,13 @@
     <!-- MENU -->
     <?php require 'partials/_menu.php' ?>
     <!-- FINE MENU -->
-    <!-- STAFF -->
+    <!-- MENU -->
     <?php require 'partials/_staff.php' ?>
-    <!-- FINE STAFF -->
-    <!-- CORSO -->
-    <?php require 'partials/_activities.php' ?>
-    <!-- FINE CORSO -->
+    <!-- FINE MENU -->
     <!-- FOOTER -->
     <?php require 'partials/_footer.php' ?>
     <!-- FINE FOOTER -->
 </body>
+
 
 <?php require 'partials/_scripts.php' ?>
