@@ -62,7 +62,7 @@
 	<div class="container py-14 py-md-16">
 		<div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
 			<div class="col-lg-4">
-				<h2 class="fs-15 text-uppercase text-line text-primary text-center mb-3">Meet the Team</h2>
+				<h2 class="fs-15 text-uppercase text-line text-primary text-center mb-3">I nostri pizzaioli</h2>
 				<h3 class="display-5 mb-5">Save your time and money by choosing our professional team.</h3>
 			</div>
 			<!--/column -->

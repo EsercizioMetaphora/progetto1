@@ -1,7 +1,7 @@
 <footer>
   <div class="container pb-7">
     <div class="row gx-lg-0 gy-6">
-      <div class="col-lg-4">
+      <div class="col-lg-3">
         <div class="widget">
           <img class="mb-4" src="<?php echo $about[0]["logo"] ?>" alt="" style="max-width: 150px"/>
           <p class="lead mb-0"><?php echo $about[0]["description"] ?></p>
@@ -10,7 +10,7 @@
       </div>
       <!-- /column -->
 	  <?php foreach (FOOTER_MENU as $footermenu) : ?>
-      <div class="col-lg-3 offset-lg-2">
+      <div class="col-lg offset-lg-1">
         <div class="widget">
           <div class="d-flex flex-row">
             <div>
