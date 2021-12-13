@@ -9,7 +9,7 @@
       <!-- /column -->
       <div class="col-lg-5 offset-lg-1 mb-n18" data-cues="slideInDown">
         <div class="position-relative light-gallery-wrapper">
-          <figure class="rounded shadow-lg"><img src="<?php echo $hero_item['img']?>" srcset="./assets/img/photos/about13@2x.jpg 2x" alt=""></figure>
+          <figure class="rounded shadow-lg"><img src="<?php echo $hero_item['img']?>" alt=""></figure>
         </div>
         <!-- /div -->
       </div>
