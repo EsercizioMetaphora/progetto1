@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/colors/purple.css">
   <link rel="preload" href="./assets/css/fonts/thicccboi.css" as="style" onload="this.rel='stylesheet'">
-  <style>
+<!--   <style>
     .parallax-effect {
       background-image: url("_immagini\Pizzeria\margherita-pizza-2021-08-29-00-57-47-utc.jpg");
       min-height: 600px;
@@ -29,4 +29,4 @@
       font-family: 'Raleway', Arial, sans-serif;
     }
   </style>
-</head>
+ --></head>
