@@ -16,7 +16,7 @@
           <!-- /.item -->
           <?php foreach(CAROUSEL as $car_item): ?>
           <div class="item col-md-6">
-            <figure class="lift rounded mb-6"><a href="./single-project3.html"> <img src="<?php echo $car_item['img'] ?>" srcset="./assets/img/photos/rp1@2x.jpg 2x" alt="" /></a></figure>
+            <figure class="lift rounded mb-6"><a href="./single-project3.html"> <img src="<?php echo $car_item['img'] ?>"  alt="" /></a></figure>
             <div class="post-category text-line mb-3 text-violet"><?php echo $car_item['description'] ?></div>
             <h2 class="post-title h3"><?php echo $car_item['ricetta'] ?></h2>
           </div>
