@@ -7,7 +7,7 @@
 <?php require 'partials/_head.php' ?>
 <!-- FINE HEAD -->
 
-<?php foreach (WEARE as $we_are_item) : ?>
+<?php foreach (COMMENTS as $comment_item) : ?>
 
     <section class="wrapper bg-light">
         <div class="container py-14 py-md-16">
@@ -15,8 +15,8 @@
                 <div class="col-lg-6">
                     <div class="d-flex flex-row">
                         <div>
-                            <h4>Can I cancel my subscription?</h4>
-                            <p class="mb-0">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod maecenas.</p>
+                            <h4><?php echo $comment_item['title'] ?></h4>
+                            <p class="mb-0"><?php echo $comment_item['review'] ?></p>
                         </div>
                     </div>
                 </div>
@@ -29,13 +29,36 @@
     <!-- /section -->
 <?php endforeach ?>
 
+<?php
+if (empty($_POST["title"])) {
+    $title = "";
+  } else {
+    $title = input($_POST["title"]);
+  }
+  if (empty($_POST["review"])) {
+    $review = "";
+  } else {
+    $review = input($_POST["review"]);
+  }
+  function input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
+?>
+
 <p>dicci la tua</p>
-<form action="" method="POST">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
     <div class="row mx-5">
         <div class="col-md-7">
             <div class="form-group mb-2">
-                <label class="my-2" for="price">Price</label>
-                <input type="text" id="price" name="price" value="<?php echo $updated_price ?>">
+                <label class="my-2" for="title">Titolo</label>
+                <input type="text" id="title" name="title" value="<?php echo $title;?>">
+            </div>
+            <div class="form-group mb-2">
+                <label class="my-2" for="review">Commento</label>
+                <input type="text" id="review" name="review" value="<?php echo $review;?>">
             </div>
         </div>
         <div>

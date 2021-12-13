@@ -56,14 +56,23 @@ define('IMG', $img_list);
 
 /* FINE IMMAGINI PIZZA  */
 
-/* COMMENTS */
+/* READ COMMENTS */
 
-$sth = $pdo->prepare("SELECT * FROM pizza_imgs");
+$sth = $pdo->prepare("SELECT * FROM comments");
 $sth->execute();
 
 $comments_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
 define('COMMENTS', $comments_list);
+
+/* FINE COMMENTS */
+/* write COMMENTS */
+
+$sth = $pdo->prepare("INSERT INTO comments (`title`, `review`) VALUES (title, review)");
+$sth->execute();
+
+$comments_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
 
 /* FINE COMMENTS */
 
