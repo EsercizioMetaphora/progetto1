@@ -11,19 +11,6 @@
 <body>
 </br>
     <!-- CAROSELLO CORSI -->
-    <?php require 'partials/_courses_carousel.php' ?>
-    <!-- FINE CAROSELLO CORSI -->
-
-    <!-- TEAM -->
-    <?php require 'partials/_team.php' ?>
-    <!-- FINE TEAM -->
-
-    <!-- ABBONAMENTI -->
-    <?php require 'partials/_abbonamenti.php' ?>
-    <!-- FINE ABBONAMENTI -->
-
-    <!-- FOOTER -->
-    <?php require 'partials/_footer.php' ?>
     <!-- FINE FOOTER -->
 </body>
 
